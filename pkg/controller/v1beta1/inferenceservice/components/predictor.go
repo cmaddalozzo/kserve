@@ -200,11 +200,15 @@ func (p *Predictor) Reconcile(isvc *v1beta1.InferenceService) error {
 			return errors.Wrapf(err, "fails to set service owner reference for predictor")
 		}
 		//set autoscaler Controller
-		if r.Scaler.Autoscaler.AutoscalerClass == constants.AutoscalerClassHPA {
-			if err := controllerutil.SetControllerReference(isvc, r.Scaler.Autoscaler.HPA.HPA, p.scheme); err != nil {
-				return errors.Wrapf(err, "fails to set HPA owner reference for predictor")
-			}
+		if err := r.Scaler.Autoscaler.SetControllerReferences(isvc, p.scheme); err != nil {
+			return errors.Wrapf(err, "fails to set autoscaler owner references for predictor")
 		}
+
+		// if r.Scaler.Autoscaler.AutoscalerClass == constants.AutoscalerClassHPA {
+		// 	if err := controllerutil.SetControllerReference(isvc, r.Scaler.Autoscaler.HPA.HPA, p.scheme); err != nil {
+		// 		return errors.Wrapf(err, "fails to set HPA owner reference for predictor")
+		// 	}
+		// }
 
 		deployment, err := r.Reconcile()
 		if err != nil {

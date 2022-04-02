@@ -3,8 +3,9 @@
 set -u
 set -e
 OVERLAY=$1
-IMG=$(ko resolve -f config/manager/manager.yaml | grep 'image:' | awk '{print $2}')
+IMG=$(ko resolve --local -f config/manager/manager.yaml | grep 'image:' | awk '{print $2}')
 if [ -z ${IMG} ]; then exit; fi
+kind load docker-image $IMG
 cat > config/overlays/${OVERLAY}/manager_image_patch.yaml << EOF
 apiVersion: apps/v1
 kind: StatefulSet 
@@ -16,13 +17,12 @@ spec:
     spec:
       containers:
         - name: manager
-          command:
           image: ${IMG}
 EOF
 
-AGENT_IMG=$(ko resolve -f config/overlays/development/configmap/ko_resolve_agent| grep 'image:' | awk '{print $2}')
+AGENT_IMG=$(ko resolve --local -f config/overlays/development/configmap/ko_resolve_agent| grep 'image:' | awk '{print $2}')
 if [ -z ${AGENT_IMG} ]; then exit; fi
-
+kind load docker-image $AGENT_IMG
 cat > config/overlays/${OVERLAY}/configmap/inferenceservice_patch.yaml << EOF
 apiVersion: v1
 kind: ConfigMap

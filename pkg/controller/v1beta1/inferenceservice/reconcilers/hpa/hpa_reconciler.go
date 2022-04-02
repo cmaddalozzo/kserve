@@ -27,6 +27,7 @@ import (
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/types"
 	"sigs.k8s.io/controller-runtime/pkg/client"
+	"sigs.k8s.io/controller-runtime/pkg/controller/controllerutil"
 	logf "sigs.k8s.io/controller-runtime/pkg/log"
 )
 
@@ -137,30 +138,34 @@ func semanticHPAEquals(desired, existing *v2beta2.HorizontalPodAutoscaler) bool 
 		equality.Semantic.DeepEqual(*desired.Spec.MinReplicas, *existing.Spec.MinReplicas)
 }
 
+func (r *HPAReconciler) SetControllerReferences(owner metav1.Object, scheme *runtime.Scheme) error {
+  return controllerutil.SetControllerReference(owner, r.HPA, scheme)
+}
+
 //Reconcile ...
-func (r *HPAReconciler) Reconcile() (*v2beta2.HorizontalPodAutoscaler, error) {
+func (r *HPAReconciler) Reconcile() error {
 	//reconcile Service
-	checkResult, existingHPA, err := r.checkHPAExist(r.client)
+	checkResult, _, err := r.checkHPAExist(r.client)
 	log.Info("service reconcile", "checkResult", checkResult, "err", err)
 	if err != nil {
-		return nil, err
+		return err
 	}
 
 	if checkResult == constants.CheckResultCreate {
 		err = r.client.Create(context.TODO(), r.HPA)
 		if err != nil {
-			return nil, err
+			return err
 		} else {
-			return r.HPA, nil
+			return nil
 		}
 	} else if checkResult == constants.CheckResultUpdate { //CheckResultUpdate
 		err = r.client.Update(context.TODO(), r.HPA)
 		if err != nil {
-			return nil, err
+			return err
 		} else {
-			return r.HPA, nil
+			return nil
 		}
 	} else {
-		return existingHPA, nil
+		return nil
 	}
 }
