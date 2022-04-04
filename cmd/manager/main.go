@@ -19,6 +19,7 @@ import (
 	"flag"
 	"os"
 
+	kedav1alpha1 "github.com/kedacore/keda/v2/apis/keda/v1alpha1"
 	"github.com/kserve/kserve/pkg/apis/serving/v1alpha1"
 	"github.com/kserve/kserve/pkg/apis/serving/v1beta1"
 	"github.com/kserve/kserve/pkg/constants"
@@ -114,6 +115,23 @@ func main() {
 		if err := v1alpha3.AddToScheme(mgr.GetScheme()); err != nil {
 			log.Error(err, "unable to add Istio v1alpha3 APIs to scheme")
 			os.Exit(1)
+		}
+	}
+
+	asConfig, err := v1beta1.NewAutoscalerConfig(client)
+	if err != nil {
+		log.Error(err, "unable to get autoscaler config.")
+		os.Exit(1)
+	}
+
+	// Add KEDA API to scheme if KEDA Autoscaler is enabled
+	for _, asClass := range asConfig.EnabledAutoscalers {
+		if asClass == constants.AutoscalerClassKEDA {
+			if err := kedav1alpha1.AddToScheme(mgr.GetScheme()); err != nil {
+				log.Error(err, "unable to add KEDA v1alpha1 APIs to scheme")
+				os.Exit(1)
+			}
+			break
 		}
 	}
 

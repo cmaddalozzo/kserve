@@ -910,6 +910,9 @@
     "v1beta1.ComponentExtensionSpec": {
       "description": "ComponentExtensionSpec defines the deployment configuration for a given InferenceService component",
       "type": "object",
+      "required": [
+        "scaleTriggers"
+      ],
       "properties": {
         "batcher": {
           "description": "Activate request batching and batching configurations",
@@ -938,6 +941,13 @@
           "description": "Minimum number of replicas, defaults to 1 but can be set to 0 to enable scale-to-zero.",
           "type": "integer",
           "format": "int32"
+        },
+        "scaleTriggers": {
+          "type": "array",
+          "items": {
+            "default": {},
+            "$ref": "#/definitions/github.com.kedacore.keda.v2.apis.keda.v1alpha1.ScaleTriggers"
+          }
         },
         "timeout": {
           "description": "TimeoutSeconds specifies the number of seconds to wait before timing out a request to the component.",
@@ -1827,6 +1837,9 @@
     "v1beta1.ExplainerSpec": {
       "description": "ExplainerSpec defines the container spec for a model explanation server, The following fields follow a \"1-of\" semantic. Users must specify exactly one spec.",
       "type": "object",
+      "required": [
+        "scaleTriggers"
+      ],
       "properties": {
         "activeDeadlineSeconds": {
           "description": "Optional duration in seconds the pod may be active on the node relative to StartTime before the system will actively try to mark it failed and kill associated containers. Value must be a positive integer.",
@@ -2007,6 +2020,13 @@
         "runtimeClassName": {
           "description": "RuntimeClassName refers to a RuntimeClass object in the node.k8s.io group, which should be used to run this pod.  If no RuntimeClass resource matches the named class, the pod will not be run. If unset or empty, the \"legacy\" RuntimeClass will be used, which is an implicit class with an empty definition that uses the default runtime handler. More info: https://git.k8s.io/enhancements/keps/sig-node/runtime-class.md This is a beta feature as of Kubernetes v1.14.",
           "type": "string"
+        },
+        "scaleTriggers": {
+          "type": "array",
+          "items": {
+            "default": {},
+            "$ref": "#/definitions/github.com.kedacore.keda.v2.apis.keda.v1alpha1.ScaleTriggers"
+          }
         },
         "schedulerName": {
           "description": "If specified, the pod will be dispatched by specified scheduler. If not specified, the pod will be dispatched by default scheduler.",
@@ -3585,6 +3605,9 @@
     "v1beta1.PredictorSpec": {
       "description": "PredictorSpec defines the configuration for a predictor, The following fields follow a \"1-of\" semantic. Users must specify exactly one spec.",
       "type": "object",
+      "required": [
+        "scaleTriggers"
+      ],
       "properties": {
         "activeDeadlineSeconds": {
           "description": "Optional duration in seconds the pod may be active on the node relative to StartTime before the system will actively try to mark it failed and kill associated containers. Value must be a positive integer.",
@@ -3777,6 +3800,13 @@
         "runtimeClassName": {
           "description": "RuntimeClassName refers to a RuntimeClass object in the node.k8s.io group, which should be used to run this pod.  If no RuntimeClass resource matches the named class, the pod will not be run. If unset or empty, the \"legacy\" RuntimeClass will be used, which is an implicit class with an empty definition that uses the default runtime handler. More info: https://git.k8s.io/enhancements/keps/sig-node/runtime-class.md This is a beta feature as of Kubernetes v1.14.",
           "type": "string"
+        },
+        "scaleTriggers": {
+          "type": "array",
+          "items": {
+            "default": {},
+            "$ref": "#/definitions/github.com.kedacore.keda.v2.apis.keda.v1alpha1.ScaleTriggers"
+          }
         },
         "schedulerName": {
           "description": "If specified, the pod will be dispatched by specified scheduler. If not specified, the pod will be dispatched by default scheduler.",
@@ -4414,6 +4444,9 @@
     "v1beta1.TransformerSpec": {
       "description": "TransformerSpec defines transformer service for pre/post processing",
       "type": "object",
+      "required": [
+        "scaleTriggers"
+      ],
       "properties": {
         "activeDeadlineSeconds": {
           "description": "Optional duration in seconds the pod may be active on the node relative to StartTime before the system will actively try to mark it failed and kill associated containers. Value must be a positive integer.",
@@ -4582,6 +4615,13 @@
         "runtimeClassName": {
           "description": "RuntimeClassName refers to a RuntimeClass object in the node.k8s.io group, which should be used to run this pod.  If no RuntimeClass resource matches the named class, the pod will not be run. If unset or empty, the \"legacy\" RuntimeClass will be used, which is an implicit class with an empty definition that uses the default runtime handler. More info: https://git.k8s.io/enhancements/keps/sig-node/runtime-class.md This is a beta feature as of Kubernetes v1.14.",
           "type": "string"
+        },
+        "scaleTriggers": {
+          "type": "array",
+          "items": {
+            "default": {},
+            "$ref": "#/definitions/github.com.kedacore.keda.v2.apis.keda.v1alpha1.ScaleTriggers"
+          }
         },
         "schedulerName": {
           "description": "If specified, the pod will be dispatched by specified scheduler. If not specified, the pod will be dispatched by default scheduler.",

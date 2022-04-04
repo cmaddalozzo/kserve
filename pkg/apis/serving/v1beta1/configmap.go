@@ -20,7 +20,6 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
-
 	"github.com/kserve/kserve/pkg/constants"
 	v1 "k8s.io/api/core/v1"
 	"k8s.io/apimachinery/pkg/types"
@@ -37,6 +36,7 @@ const (
 const (
 	IngressConfigKeyName = "ingress"
 	DeployConfigName     = "deploy"
+	AutoscalerConfigName = "autoscaler"
 
 	DefaultDomainTemplate = "{{ .Name }}-{{ .Namespace }}.{{ .IngressDomain }}"
 	DefaultIngressDomain  = "example.com"
@@ -127,6 +127,12 @@ type IngressConfig struct {
 }
 
 // +kubebuilder:object:generate=false
+type AutoscalerConfig struct {
+	DefaultAutoscaler  constants.AutoscalerClassType   `json:"defaultAutoscaler,omitempty"`
+	EnabledAutoscalers []constants.AutoscalerClassType `json:"enabledAutoscalers,omitempty"`
+}
+
+// +kubebuilder:object:generate=false
 type DeployConfig struct {
 	DefaultDeploymentMode string `json:"defaultDeploymentMode,omitempty"`
 }
@@ -214,4 +220,65 @@ func NewDeployConfig(cli client.Client) (*DeployConfig, error) {
 		}
 	}
 	return deployConfig, nil
+}
+
+func isAutoscalerClassTypeValid(asClass constants.AutoscalerClassType) bool {
+	for _, cls := range constants.AutoscalerAllowedClassList {
+		if asClass == cls {
+			return true
+		}
+	}
+	return false
+}
+
+func parseAutoscalerConfig(data map[string]string) (*AutoscalerConfig, error) {
+	asConfig := &AutoscalerConfig{}
+	if asConfigRaw, ok := data[AutoscalerConfigName]; ok {
+		err := json.Unmarshal([]byte(asConfigRaw), &asConfig)
+		if err != nil {
+			return nil, fmt.Errorf("Unable to parse autoscaler config json: %v", err)
+		}
+	}
+	// Default to HPA if no default autoscaler is provided in config
+	if asConfig.DefaultAutoscaler == "" {
+		asConfig.DefaultAutoscaler = constants.AutoscalerClassHPA
+	}
+	// Enable HPA and no-op autoscalers if no enabled autoscalers provided
+	if len(asConfig.EnabledAutoscalers) == 0 {
+		asConfig.EnabledAutoscalers = []constants.AutoscalerClassType{
+			constants.AutoscalerClassHPA,
+			constants.AutoscalerClassNone,
+		}
+	}
+	if !isAutoscalerClassTypeValid(asConfig.DefaultAutoscaler) {
+		return nil, fmt.Errorf("Invalid default autoscaler class: %v", asConfig.DefaultAutoscaler)
+	}
+	for _, asClass := range asConfig.EnabledAutoscalers {
+		if !isAutoscalerClassTypeValid(asClass) {
+			return nil, fmt.Errorf("Invalid autoscaler class in enabled autoscalers: %v", asClass)
+		}
+	}
+	// Check if the specified default autoscaler is present in the list of enabled autoscalers
+	defaultIsEnabled := func() bool {
+		for _, asClass := range asConfig.EnabledAutoscalers {
+			if asConfig.DefaultAutoscaler == asClass {
+				return true
+			}
+		}
+		return false
+	}
+	// The default autoscaler must be enabled
+	if !defaultIsEnabled() {
+		return nil, fmt.Errorf("Default autoscaler does not appear in the enabled autoscalers list: %v", asConfig.DefaultAutoscaler)
+	}
+	return asConfig, nil
+}
+
+func NewAutoscalerConfig(cli client.Client) (*AutoscalerConfig, error) {
+	configMap := &v1.ConfigMap{}
+	err := cli.Get(context.TODO(), types.NamespacedName{Name: constants.InferenceServiceConfigMapName, Namespace: constants.KServeNamespace}, configMap)
+	if err != nil {
+		return nil, err
+	}
+	return parseAutoscalerConfig(configMap.Data)
 }

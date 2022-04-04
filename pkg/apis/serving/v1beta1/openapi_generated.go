@@ -30,66 +30,66 @@ import (
 
 func GetOpenAPIDefinitions(ref common.ReferenceCallback) map[string]common.OpenAPIDefinition {
 	return map[string]common.OpenAPIDefinition{
-		"./pkg/apis/serving/v1alpha1.BuiltInAdapter":            schema_pkg_apis_serving_v1alpha1_BuiltInAdapter(ref),
-		"./pkg/apis/serving/v1alpha1.ClusterServingRuntime":     schema_pkg_apis_serving_v1alpha1_ClusterServingRuntime(ref),
-		"./pkg/apis/serving/v1alpha1.ClusterServingRuntimeList": schema_pkg_apis_serving_v1alpha1_ClusterServingRuntimeList(ref),
-		"./pkg/apis/serving/v1alpha1.ModelSpec":                 schema_pkg_apis_serving_v1alpha1_ModelSpec(ref),
-		"./pkg/apis/serving/v1alpha1.ServingRuntime":            schema_pkg_apis_serving_v1alpha1_ServingRuntime(ref),
-		"./pkg/apis/serving/v1alpha1.ServingRuntimeList":        schema_pkg_apis_serving_v1alpha1_ServingRuntimeList(ref),
-		"./pkg/apis/serving/v1alpha1.ServingRuntimePodSpec":     schema_pkg_apis_serving_v1alpha1_ServingRuntimePodSpec(ref),
-		"./pkg/apis/serving/v1alpha1.ServingRuntimeSpec":        schema_pkg_apis_serving_v1alpha1_ServingRuntimeSpec(ref),
-		"./pkg/apis/serving/v1alpha1.ServingRuntimeStatus":      schema_pkg_apis_serving_v1alpha1_ServingRuntimeStatus(ref),
-		"./pkg/apis/serving/v1alpha1.StorageHelper":             schema_pkg_apis_serving_v1alpha1_StorageHelper(ref),
-		"./pkg/apis/serving/v1alpha1.SupportedModelFormat":      schema_pkg_apis_serving_v1alpha1_SupportedModelFormat(ref),
-		"./pkg/apis/serving/v1alpha1.TrainedModel":              schema_pkg_apis_serving_v1alpha1_TrainedModel(ref),
-		"./pkg/apis/serving/v1alpha1.TrainedModelList":          schema_pkg_apis_serving_v1alpha1_TrainedModelList(ref),
-		"./pkg/apis/serving/v1alpha1.TrainedModelSpec":          schema_pkg_apis_serving_v1alpha1_TrainedModelSpec(ref),
-		"./pkg/apis/serving/v1beta1.AIXExplainerSpec":           schema_pkg_apis_serving_v1beta1_AIXExplainerSpec(ref),
-		"./pkg/apis/serving/v1beta1.ARTExplainerSpec":           schema_pkg_apis_serving_v1beta1_ARTExplainerSpec(ref),
-		"./pkg/apis/serving/v1beta1.AlibiExplainerSpec":         schema_pkg_apis_serving_v1beta1_AlibiExplainerSpec(ref),
-		"./pkg/apis/serving/v1beta1.Batcher":                    schema_pkg_apis_serving_v1beta1_Batcher(ref),
-		"./pkg/apis/serving/v1beta1.ComponentExtensionSpec":     schema_pkg_apis_serving_v1beta1_ComponentExtensionSpec(ref),
-		"./pkg/apis/serving/v1beta1.ComponentStatusSpec":        schema_pkg_apis_serving_v1beta1_ComponentStatusSpec(ref),
-		"./pkg/apis/serving/v1beta1.CustomExplainer":            schema_pkg_apis_serving_v1beta1_CustomExplainer(ref),
-		"./pkg/apis/serving/v1beta1.CustomPredictor":            schema_pkg_apis_serving_v1beta1_CustomPredictor(ref),
-		"./pkg/apis/serving/v1beta1.CustomTransformer":          schema_pkg_apis_serving_v1beta1_CustomTransformer(ref),
-		"./pkg/apis/serving/v1beta1.DeployConfig":               schema_pkg_apis_serving_v1beta1_DeployConfig(ref),
-		"./pkg/apis/serving/v1beta1.ExplainerConfig":            schema_pkg_apis_serving_v1beta1_ExplainerConfig(ref),
-		"./pkg/apis/serving/v1beta1.ExplainerExtensionSpec":     schema_pkg_apis_serving_v1beta1_ExplainerExtensionSpec(ref),
-		"./pkg/apis/serving/v1beta1.ExplainerSpec":              schema_pkg_apis_serving_v1beta1_ExplainerSpec(ref),
-		"./pkg/apis/serving/v1beta1.ExplainersConfig":           schema_pkg_apis_serving_v1beta1_ExplainersConfig(ref),
-		"./pkg/apis/serving/v1beta1.FailureInfo":                schema_pkg_apis_serving_v1beta1_FailureInfo(ref),
-		"./pkg/apis/serving/v1beta1.InferenceService":           schema_pkg_apis_serving_v1beta1_InferenceService(ref),
-		"./pkg/apis/serving/v1beta1.InferenceServiceList":       schema_pkg_apis_serving_v1beta1_InferenceServiceList(ref),
-		"./pkg/apis/serving/v1beta1.InferenceServiceSpec":       schema_pkg_apis_serving_v1beta1_InferenceServiceSpec(ref),
-		"./pkg/apis/serving/v1beta1.InferenceServiceStatus":     schema_pkg_apis_serving_v1beta1_InferenceServiceStatus(ref),
-		"./pkg/apis/serving/v1beta1.InferenceServicesConfig":    schema_pkg_apis_serving_v1beta1_InferenceServicesConfig(ref),
-		"./pkg/apis/serving/v1beta1.IngressConfig":              schema_pkg_apis_serving_v1beta1_IngressConfig(ref),
-		"./pkg/apis/serving/v1beta1.LightGBMSpec":               schema_pkg_apis_serving_v1beta1_LightGBMSpec(ref),
-		"./pkg/apis/serving/v1beta1.LoggerSpec":                 schema_pkg_apis_serving_v1beta1_LoggerSpec(ref),
-		"./pkg/apis/serving/v1beta1.ModelCopies":                schema_pkg_apis_serving_v1beta1_ModelCopies(ref),
-		"./pkg/apis/serving/v1beta1.ModelFormat":                schema_pkg_apis_serving_v1beta1_ModelFormat(ref),
-		"./pkg/apis/serving/v1beta1.ModelRevisionStates":        schema_pkg_apis_serving_v1beta1_ModelRevisionStates(ref),
-		"./pkg/apis/serving/v1beta1.ModelSpec":                  schema_pkg_apis_serving_v1beta1_ModelSpec(ref),
-		"./pkg/apis/serving/v1beta1.ModelStatus":                schema_pkg_apis_serving_v1beta1_ModelStatus(ref),
-		"./pkg/apis/serving/v1beta1.ONNXRuntimeSpec":            schema_pkg_apis_serving_v1beta1_ONNXRuntimeSpec(ref),
-		"./pkg/apis/serving/v1beta1.PMMLSpec":                   schema_pkg_apis_serving_v1beta1_PMMLSpec(ref),
-		"./pkg/apis/serving/v1beta1.PaddleServerSpec":           schema_pkg_apis_serving_v1beta1_PaddleServerSpec(ref),
-		"./pkg/apis/serving/v1beta1.PodSpec":                    schema_pkg_apis_serving_v1beta1_PodSpec(ref),
-		"./pkg/apis/serving/v1beta1.PredictorConfig":            schema_pkg_apis_serving_v1beta1_PredictorConfig(ref),
-		"./pkg/apis/serving/v1beta1.PredictorExtensionSpec":     schema_pkg_apis_serving_v1beta1_PredictorExtensionSpec(ref),
-		"./pkg/apis/serving/v1beta1.PredictorProtocols":         schema_pkg_apis_serving_v1beta1_PredictorProtocols(ref),
-		"./pkg/apis/serving/v1beta1.PredictorSpec":              schema_pkg_apis_serving_v1beta1_PredictorSpec(ref),
-		"./pkg/apis/serving/v1beta1.PredictorsConfig":           schema_pkg_apis_serving_v1beta1_PredictorsConfig(ref),
-		"./pkg/apis/serving/v1beta1.SKLearnSpec":                schema_pkg_apis_serving_v1beta1_SKLearnSpec(ref),
-		"./pkg/apis/serving/v1beta1.StorageSpec":                schema_pkg_apis_serving_v1beta1_StorageSpec(ref),
-		"./pkg/apis/serving/v1beta1.TFServingSpec":              schema_pkg_apis_serving_v1beta1_TFServingSpec(ref),
-		"./pkg/apis/serving/v1beta1.TorchServeSpec":             schema_pkg_apis_serving_v1beta1_TorchServeSpec(ref),
-		"./pkg/apis/serving/v1beta1.TransformerConfig":          schema_pkg_apis_serving_v1beta1_TransformerConfig(ref),
-		"./pkg/apis/serving/v1beta1.TransformerSpec":            schema_pkg_apis_serving_v1beta1_TransformerSpec(ref),
-		"./pkg/apis/serving/v1beta1.TransformersConfig":         schema_pkg_apis_serving_v1beta1_TransformersConfig(ref),
-		"./pkg/apis/serving/v1beta1.TritonSpec":                 schema_pkg_apis_serving_v1beta1_TritonSpec(ref),
-		"./pkg/apis/serving/v1beta1.XGBoostSpec":                schema_pkg_apis_serving_v1beta1_XGBoostSpec(ref),
+		"github.com/kserve/kserve/pkg/apis/serving/v1alpha1.BuiltInAdapter":            schema_pkg_apis_serving_v1alpha1_BuiltInAdapter(ref),
+		"github.com/kserve/kserve/pkg/apis/serving/v1alpha1.ClusterServingRuntime":     schema_pkg_apis_serving_v1alpha1_ClusterServingRuntime(ref),
+		"github.com/kserve/kserve/pkg/apis/serving/v1alpha1.ClusterServingRuntimeList": schema_pkg_apis_serving_v1alpha1_ClusterServingRuntimeList(ref),
+		"github.com/kserve/kserve/pkg/apis/serving/v1alpha1.ModelSpec":                 schema_pkg_apis_serving_v1alpha1_ModelSpec(ref),
+		"github.com/kserve/kserve/pkg/apis/serving/v1alpha1.ServingRuntime":            schema_pkg_apis_serving_v1alpha1_ServingRuntime(ref),
+		"github.com/kserve/kserve/pkg/apis/serving/v1alpha1.ServingRuntimeList":        schema_pkg_apis_serving_v1alpha1_ServingRuntimeList(ref),
+		"github.com/kserve/kserve/pkg/apis/serving/v1alpha1.ServingRuntimePodSpec":     schema_pkg_apis_serving_v1alpha1_ServingRuntimePodSpec(ref),
+		"github.com/kserve/kserve/pkg/apis/serving/v1alpha1.ServingRuntimeSpec":        schema_pkg_apis_serving_v1alpha1_ServingRuntimeSpec(ref),
+		"github.com/kserve/kserve/pkg/apis/serving/v1alpha1.ServingRuntimeStatus":      schema_pkg_apis_serving_v1alpha1_ServingRuntimeStatus(ref),
+		"github.com/kserve/kserve/pkg/apis/serving/v1alpha1.StorageHelper":             schema_pkg_apis_serving_v1alpha1_StorageHelper(ref),
+		"github.com/kserve/kserve/pkg/apis/serving/v1alpha1.SupportedModelFormat":      schema_pkg_apis_serving_v1alpha1_SupportedModelFormat(ref),
+		"github.com/kserve/kserve/pkg/apis/serving/v1alpha1.TrainedModel":              schema_pkg_apis_serving_v1alpha1_TrainedModel(ref),
+		"github.com/kserve/kserve/pkg/apis/serving/v1alpha1.TrainedModelList":          schema_pkg_apis_serving_v1alpha1_TrainedModelList(ref),
+		"github.com/kserve/kserve/pkg/apis/serving/v1alpha1.TrainedModelSpec":          schema_pkg_apis_serving_v1alpha1_TrainedModelSpec(ref),
+		"github.com/kserve/kserve/pkg/apis/serving/v1beta1.AIXExplainerSpec":           schema_pkg_apis_serving_v1beta1_AIXExplainerSpec(ref),
+		"github.com/kserve/kserve/pkg/apis/serving/v1beta1.ARTExplainerSpec":           schema_pkg_apis_serving_v1beta1_ARTExplainerSpec(ref),
+		"github.com/kserve/kserve/pkg/apis/serving/v1beta1.AlibiExplainerSpec":         schema_pkg_apis_serving_v1beta1_AlibiExplainerSpec(ref),
+		"github.com/kserve/kserve/pkg/apis/serving/v1beta1.Batcher":                    schema_pkg_apis_serving_v1beta1_Batcher(ref),
+		"github.com/kserve/kserve/pkg/apis/serving/v1beta1.ComponentExtensionSpec":     schema_pkg_apis_serving_v1beta1_ComponentExtensionSpec(ref),
+		"github.com/kserve/kserve/pkg/apis/serving/v1beta1.ComponentStatusSpec":        schema_pkg_apis_serving_v1beta1_ComponentStatusSpec(ref),
+		"github.com/kserve/kserve/pkg/apis/serving/v1beta1.CustomExplainer":            schema_pkg_apis_serving_v1beta1_CustomExplainer(ref),
+		"github.com/kserve/kserve/pkg/apis/serving/v1beta1.CustomPredictor":            schema_pkg_apis_serving_v1beta1_CustomPredictor(ref),
+		"github.com/kserve/kserve/pkg/apis/serving/v1beta1.CustomTransformer":          schema_pkg_apis_serving_v1beta1_CustomTransformer(ref),
+		"github.com/kserve/kserve/pkg/apis/serving/v1beta1.DeployConfig":               schema_pkg_apis_serving_v1beta1_DeployConfig(ref),
+		"github.com/kserve/kserve/pkg/apis/serving/v1beta1.ExplainerConfig":            schema_pkg_apis_serving_v1beta1_ExplainerConfig(ref),
+		"github.com/kserve/kserve/pkg/apis/serving/v1beta1.ExplainerExtensionSpec":     schema_pkg_apis_serving_v1beta1_ExplainerExtensionSpec(ref),
+		"github.com/kserve/kserve/pkg/apis/serving/v1beta1.ExplainerSpec":              schema_pkg_apis_serving_v1beta1_ExplainerSpec(ref),
+		"github.com/kserve/kserve/pkg/apis/serving/v1beta1.ExplainersConfig":           schema_pkg_apis_serving_v1beta1_ExplainersConfig(ref),
+		"github.com/kserve/kserve/pkg/apis/serving/v1beta1.FailureInfo":                schema_pkg_apis_serving_v1beta1_FailureInfo(ref),
+		"github.com/kserve/kserve/pkg/apis/serving/v1beta1.InferenceService":           schema_pkg_apis_serving_v1beta1_InferenceService(ref),
+		"github.com/kserve/kserve/pkg/apis/serving/v1beta1.InferenceServiceList":       schema_pkg_apis_serving_v1beta1_InferenceServiceList(ref),
+		"github.com/kserve/kserve/pkg/apis/serving/v1beta1.InferenceServiceSpec":       schema_pkg_apis_serving_v1beta1_InferenceServiceSpec(ref),
+		"github.com/kserve/kserve/pkg/apis/serving/v1beta1.InferenceServiceStatus":     schema_pkg_apis_serving_v1beta1_InferenceServiceStatus(ref),
+		"github.com/kserve/kserve/pkg/apis/serving/v1beta1.InferenceServicesConfig":    schema_pkg_apis_serving_v1beta1_InferenceServicesConfig(ref),
+		"github.com/kserve/kserve/pkg/apis/serving/v1beta1.IngressConfig":              schema_pkg_apis_serving_v1beta1_IngressConfig(ref),
+		"github.com/kserve/kserve/pkg/apis/serving/v1beta1.LightGBMSpec":               schema_pkg_apis_serving_v1beta1_LightGBMSpec(ref),
+		"github.com/kserve/kserve/pkg/apis/serving/v1beta1.LoggerSpec":                 schema_pkg_apis_serving_v1beta1_LoggerSpec(ref),
+		"github.com/kserve/kserve/pkg/apis/serving/v1beta1.ModelCopies":                schema_pkg_apis_serving_v1beta1_ModelCopies(ref),
+		"github.com/kserve/kserve/pkg/apis/serving/v1beta1.ModelFormat":                schema_pkg_apis_serving_v1beta1_ModelFormat(ref),
+		"github.com/kserve/kserve/pkg/apis/serving/v1beta1.ModelRevisionStates":        schema_pkg_apis_serving_v1beta1_ModelRevisionStates(ref),
+		"github.com/kserve/kserve/pkg/apis/serving/v1beta1.ModelSpec":                  schema_pkg_apis_serving_v1beta1_ModelSpec(ref),
+		"github.com/kserve/kserve/pkg/apis/serving/v1beta1.ModelStatus":                schema_pkg_apis_serving_v1beta1_ModelStatus(ref),
+		"github.com/kserve/kserve/pkg/apis/serving/v1beta1.ONNXRuntimeSpec":            schema_pkg_apis_serving_v1beta1_ONNXRuntimeSpec(ref),
+		"github.com/kserve/kserve/pkg/apis/serving/v1beta1.PMMLSpec":                   schema_pkg_apis_serving_v1beta1_PMMLSpec(ref),
+		"github.com/kserve/kserve/pkg/apis/serving/v1beta1.PaddleServerSpec":           schema_pkg_apis_serving_v1beta1_PaddleServerSpec(ref),
+		"github.com/kserve/kserve/pkg/apis/serving/v1beta1.PodSpec":                    schema_pkg_apis_serving_v1beta1_PodSpec(ref),
+		"github.com/kserve/kserve/pkg/apis/serving/v1beta1.PredictorConfig":            schema_pkg_apis_serving_v1beta1_PredictorConfig(ref),
+		"github.com/kserve/kserve/pkg/apis/serving/v1beta1.PredictorExtensionSpec":     schema_pkg_apis_serving_v1beta1_PredictorExtensionSpec(ref),
+		"github.com/kserve/kserve/pkg/apis/serving/v1beta1.PredictorProtocols":         schema_pkg_apis_serving_v1beta1_PredictorProtocols(ref),
+		"github.com/kserve/kserve/pkg/apis/serving/v1beta1.PredictorSpec":              schema_pkg_apis_serving_v1beta1_PredictorSpec(ref),
+		"github.com/kserve/kserve/pkg/apis/serving/v1beta1.PredictorsConfig":           schema_pkg_apis_serving_v1beta1_PredictorsConfig(ref),
+		"github.com/kserve/kserve/pkg/apis/serving/v1beta1.SKLearnSpec":                schema_pkg_apis_serving_v1beta1_SKLearnSpec(ref),
+		"github.com/kserve/kserve/pkg/apis/serving/v1beta1.StorageSpec":                schema_pkg_apis_serving_v1beta1_StorageSpec(ref),
+		"github.com/kserve/kserve/pkg/apis/serving/v1beta1.TFServingSpec":              schema_pkg_apis_serving_v1beta1_TFServingSpec(ref),
+		"github.com/kserve/kserve/pkg/apis/serving/v1beta1.TorchServeSpec":             schema_pkg_apis_serving_v1beta1_TorchServeSpec(ref),
+		"github.com/kserve/kserve/pkg/apis/serving/v1beta1.TransformerConfig":          schema_pkg_apis_serving_v1beta1_TransformerConfig(ref),
+		"github.com/kserve/kserve/pkg/apis/serving/v1beta1.TransformerSpec":            schema_pkg_apis_serving_v1beta1_TransformerSpec(ref),
+		"github.com/kserve/kserve/pkg/apis/serving/v1beta1.TransformersConfig":         schema_pkg_apis_serving_v1beta1_TransformersConfig(ref),
+		"github.com/kserve/kserve/pkg/apis/serving/v1beta1.TritonSpec":                 schema_pkg_apis_serving_v1beta1_TritonSpec(ref),
+		"github.com/kserve/kserve/pkg/apis/serving/v1beta1.XGBoostSpec":                schema_pkg_apis_serving_v1beta1_XGBoostSpec(ref),
 	}
 }
 
@@ -163,20 +163,20 @@ func schema_pkg_apis_serving_v1alpha1_ClusterServingRuntime(ref common.Reference
 					"spec": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("./pkg/apis/serving/v1alpha1.ServingRuntimeSpec"),
+							Ref:     ref("github.com/kserve/kserve/pkg/apis/serving/v1alpha1.ServingRuntimeSpec"),
 						},
 					},
 					"status": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("./pkg/apis/serving/v1alpha1.ServingRuntimeStatus"),
+							Ref:     ref("github.com/kserve/kserve/pkg/apis/serving/v1alpha1.ServingRuntimeStatus"),
 						},
 					},
 				},
 			},
 		},
 		Dependencies: []string{
-			"./pkg/apis/serving/v1alpha1.ServingRuntimeSpec", "./pkg/apis/serving/v1alpha1.ServingRuntimeStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			"github.com/kserve/kserve/pkg/apis/serving/v1alpha1.ServingRuntimeSpec", "github.com/kserve/kserve/pkg/apis/serving/v1alpha1.ServingRuntimeStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
 	}
 }
 
@@ -214,7 +214,7 @@ func schema_pkg_apis_serving_v1alpha1_ClusterServingRuntimeList(ref common.Refer
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("./pkg/apis/serving/v1alpha1.ClusterServingRuntime"),
+										Ref:     ref("github.com/kserve/kserve/pkg/apis/serving/v1alpha1.ClusterServingRuntime"),
 									},
 								},
 							},
@@ -225,7 +225,7 @@ func schema_pkg_apis_serving_v1alpha1_ClusterServingRuntimeList(ref common.Refer
 			},
 		},
 		Dependencies: []string{
-			"./pkg/apis/serving/v1alpha1.ClusterServingRuntime", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			"github.com/kserve/kserve/pkg/apis/serving/v1alpha1.ClusterServingRuntime", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
 	}
 }
 
@@ -298,20 +298,20 @@ func schema_pkg_apis_serving_v1alpha1_ServingRuntime(ref common.ReferenceCallbac
 					"spec": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("./pkg/apis/serving/v1alpha1.ServingRuntimeSpec"),
+							Ref:     ref("github.com/kserve/kserve/pkg/apis/serving/v1alpha1.ServingRuntimeSpec"),
 						},
 					},
 					"status": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("./pkg/apis/serving/v1alpha1.ServingRuntimeStatus"),
+							Ref:     ref("github.com/kserve/kserve/pkg/apis/serving/v1alpha1.ServingRuntimeStatus"),
 						},
 					},
 				},
 			},
 		},
 		Dependencies: []string{
-			"./pkg/apis/serving/v1alpha1.ServingRuntimeSpec", "./pkg/apis/serving/v1alpha1.ServingRuntimeStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			"github.com/kserve/kserve/pkg/apis/serving/v1alpha1.ServingRuntimeSpec", "github.com/kserve/kserve/pkg/apis/serving/v1alpha1.ServingRuntimeStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
 	}
 }
 
@@ -349,7 +349,7 @@ func schema_pkg_apis_serving_v1alpha1_ServingRuntimeList(ref common.ReferenceCal
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("./pkg/apis/serving/v1alpha1.ServingRuntime"),
+										Ref:     ref("github.com/kserve/kserve/pkg/apis/serving/v1alpha1.ServingRuntime"),
 									},
 								},
 							},
@@ -360,7 +360,7 @@ func schema_pkg_apis_serving_v1alpha1_ServingRuntimeList(ref common.ReferenceCal
 			},
 		},
 		Dependencies: []string{
-			"./pkg/apis/serving/v1alpha1.ServingRuntime", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			"github.com/kserve/kserve/pkg/apis/serving/v1alpha1.ServingRuntime", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
 	}
 }
 
@@ -450,7 +450,7 @@ func schema_pkg_apis_serving_v1alpha1_ServingRuntimeSpec(ref common.ReferenceCal
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("./pkg/apis/serving/v1alpha1.SupportedModelFormat"),
+										Ref:     ref("github.com/kserve/kserve/pkg/apis/serving/v1alpha1.SupportedModelFormat"),
 									},
 								},
 							},
@@ -557,13 +557,13 @@ func schema_pkg_apis_serving_v1alpha1_ServingRuntimeSpec(ref common.ReferenceCal
 					"storageHelper": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Configuration for this runtime's use of the storage helper (model puller) It is enabled unless explicitly disabled",
-							Ref:         ref("./pkg/apis/serving/v1alpha1.StorageHelper"),
+							Ref:         ref("github.com/kserve/kserve/pkg/apis/serving/v1alpha1.StorageHelper"),
 						},
 					},
 					"builtInAdapter": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Provide the details about built-in runtime adapter",
-							Ref:         ref("./pkg/apis/serving/v1alpha1.BuiltInAdapter"),
+							Ref:         ref("github.com/kserve/kserve/pkg/apis/serving/v1alpha1.BuiltInAdapter"),
 						},
 					},
 				},
@@ -571,7 +571,7 @@ func schema_pkg_apis_serving_v1alpha1_ServingRuntimeSpec(ref common.ReferenceCal
 			},
 		},
 		Dependencies: []string{
-			"./pkg/apis/serving/v1alpha1.BuiltInAdapter", "./pkg/apis/serving/v1alpha1.StorageHelper", "./pkg/apis/serving/v1alpha1.SupportedModelFormat", "k8s.io/api/core/v1.Affinity", "k8s.io/api/core/v1.Container", "k8s.io/api/core/v1.Toleration"},
+			"github.com/kserve/kserve/pkg/apis/serving/v1alpha1.BuiltInAdapter", "github.com/kserve/kserve/pkg/apis/serving/v1alpha1.StorageHelper", "github.com/kserve/kserve/pkg/apis/serving/v1alpha1.SupportedModelFormat", "k8s.io/api/core/v1.Affinity", "k8s.io/api/core/v1.Container", "k8s.io/api/core/v1.Toleration"},
 	}
 }
 
@@ -669,20 +669,20 @@ func schema_pkg_apis_serving_v1alpha1_TrainedModel(ref common.ReferenceCallback)
 					"spec": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("./pkg/apis/serving/v1alpha1.TrainedModelSpec"),
+							Ref:     ref("github.com/kserve/kserve/pkg/apis/serving/v1alpha1.TrainedModelSpec"),
 						},
 					},
 					"status": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("./pkg/apis/serving/v1alpha1.TrainedModelStatus"),
+							Ref:     ref("github.com/kserve/kserve/pkg/apis/serving/v1alpha1.TrainedModelStatus"),
 						},
 					},
 				},
 			},
 		},
 		Dependencies: []string{
-			"./pkg/apis/serving/v1alpha1.TrainedModelSpec", "./pkg/apis/serving/v1alpha1.TrainedModelStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			"github.com/kserve/kserve/pkg/apis/serving/v1alpha1.TrainedModelSpec", "github.com/kserve/kserve/pkg/apis/serving/v1alpha1.TrainedModelStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
 	}
 }
 
@@ -725,7 +725,7 @@ func schema_pkg_apis_serving_v1alpha1_TrainedModelList(ref common.ReferenceCallb
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("./pkg/apis/serving/v1alpha1.TrainedModel"),
+										Ref:     ref("github.com/kserve/kserve/pkg/apis/serving/v1alpha1.TrainedModel"),
 									},
 								},
 							},
@@ -736,7 +736,7 @@ func schema_pkg_apis_serving_v1alpha1_TrainedModelList(ref common.ReferenceCallb
 			},
 		},
 		Dependencies: []string{
-			"./pkg/apis/serving/v1alpha1.TrainedModel", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			"github.com/kserve/kserve/pkg/apis/serving/v1alpha1.TrainedModel", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
 	}
 }
 
@@ -759,7 +759,7 @@ func schema_pkg_apis_serving_v1alpha1_TrainedModelSpec(ref common.ReferenceCallb
 						SchemaProps: spec.SchemaProps{
 							Description: "Predictor model spec",
 							Default:     map[string]interface{}{},
-							Ref:         ref("./pkg/apis/serving/v1alpha1.ModelSpec"),
+							Ref:         ref("github.com/kserve/kserve/pkg/apis/serving/v1alpha1.ModelSpec"),
 						},
 					},
 				},
@@ -767,7 +767,7 @@ func schema_pkg_apis_serving_v1alpha1_TrainedModelSpec(ref common.ReferenceCallb
 			},
 		},
 		Dependencies: []string{
-			"./pkg/apis/serving/v1alpha1.ModelSpec"},
+			"github.com/kserve/kserve/pkg/apis/serving/v1alpha1.ModelSpec"},
 	}
 }
 
@@ -1049,7 +1049,7 @@ func schema_pkg_apis_serving_v1beta1_AIXExplainerSpec(ref common.ReferenceCallba
 					"storage": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Storage Spec for model location",
-							Ref:         ref("./pkg/apis/serving/v1beta1.StorageSpec"),
+							Ref:         ref("github.com/kserve/kserve/pkg/apis/serving/v1beta1.StorageSpec"),
 						},
 					},
 				},
@@ -1057,7 +1057,7 @@ func schema_pkg_apis_serving_v1beta1_AIXExplainerSpec(ref common.ReferenceCallba
 			},
 		},
 		Dependencies: []string{
-			"./pkg/apis/serving/v1beta1.StorageSpec", "k8s.io/api/core/v1.ContainerPort", "k8s.io/api/core/v1.EnvFromSource", "k8s.io/api/core/v1.EnvVar", "k8s.io/api/core/v1.Lifecycle", "k8s.io/api/core/v1.Probe", "k8s.io/api/core/v1.ResourceRequirements", "k8s.io/api/core/v1.SecurityContext", "k8s.io/api/core/v1.VolumeDevice", "k8s.io/api/core/v1.VolumeMount"},
+			"github.com/kserve/kserve/pkg/apis/serving/v1beta1.StorageSpec", "k8s.io/api/core/v1.ContainerPort", "k8s.io/api/core/v1.EnvFromSource", "k8s.io/api/core/v1.EnvVar", "k8s.io/api/core/v1.Lifecycle", "k8s.io/api/core/v1.Probe", "k8s.io/api/core/v1.ResourceRequirements", "k8s.io/api/core/v1.SecurityContext", "k8s.io/api/core/v1.VolumeDevice", "k8s.io/api/core/v1.VolumeMount"},
 	}
 }
 
@@ -1339,7 +1339,7 @@ func schema_pkg_apis_serving_v1beta1_ARTExplainerSpec(ref common.ReferenceCallba
 					"storage": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Storage Spec for model location",
-							Ref:         ref("./pkg/apis/serving/v1beta1.StorageSpec"),
+							Ref:         ref("github.com/kserve/kserve/pkg/apis/serving/v1beta1.StorageSpec"),
 						},
 					},
 				},
@@ -1347,7 +1347,7 @@ func schema_pkg_apis_serving_v1beta1_ARTExplainerSpec(ref common.ReferenceCallba
 			},
 		},
 		Dependencies: []string{
-			"./pkg/apis/serving/v1beta1.StorageSpec", "k8s.io/api/core/v1.ContainerPort", "k8s.io/api/core/v1.EnvFromSource", "k8s.io/api/core/v1.EnvVar", "k8s.io/api/core/v1.Lifecycle", "k8s.io/api/core/v1.Probe", "k8s.io/api/core/v1.ResourceRequirements", "k8s.io/api/core/v1.SecurityContext", "k8s.io/api/core/v1.VolumeDevice", "k8s.io/api/core/v1.VolumeMount"},
+			"github.com/kserve/kserve/pkg/apis/serving/v1beta1.StorageSpec", "k8s.io/api/core/v1.ContainerPort", "k8s.io/api/core/v1.EnvFromSource", "k8s.io/api/core/v1.EnvVar", "k8s.io/api/core/v1.Lifecycle", "k8s.io/api/core/v1.Probe", "k8s.io/api/core/v1.ResourceRequirements", "k8s.io/api/core/v1.SecurityContext", "k8s.io/api/core/v1.VolumeDevice", "k8s.io/api/core/v1.VolumeMount"},
 	}
 }
 
@@ -1629,7 +1629,7 @@ func schema_pkg_apis_serving_v1beta1_AlibiExplainerSpec(ref common.ReferenceCall
 					"storage": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Storage Spec for model location",
-							Ref:         ref("./pkg/apis/serving/v1beta1.StorageSpec"),
+							Ref:         ref("github.com/kserve/kserve/pkg/apis/serving/v1beta1.StorageSpec"),
 						},
 					},
 				},
@@ -1637,7 +1637,7 @@ func schema_pkg_apis_serving_v1beta1_AlibiExplainerSpec(ref common.ReferenceCall
 			},
 		},
 		Dependencies: []string{
-			"./pkg/apis/serving/v1beta1.StorageSpec", "k8s.io/api/core/v1.ContainerPort", "k8s.io/api/core/v1.EnvFromSource", "k8s.io/api/core/v1.EnvVar", "k8s.io/api/core/v1.Lifecycle", "k8s.io/api/core/v1.Probe", "k8s.io/api/core/v1.ResourceRequirements", "k8s.io/api/core/v1.SecurityContext", "k8s.io/api/core/v1.VolumeDevice", "k8s.io/api/core/v1.VolumeMount"},
+			"github.com/kserve/kserve/pkg/apis/serving/v1beta1.StorageSpec", "k8s.io/api/core/v1.ContainerPort", "k8s.io/api/core/v1.EnvFromSource", "k8s.io/api/core/v1.EnvVar", "k8s.io/api/core/v1.Lifecycle", "k8s.io/api/core/v1.Probe", "k8s.io/api/core/v1.ResourceRequirements", "k8s.io/api/core/v1.SecurityContext", "k8s.io/api/core/v1.VolumeDevice", "k8s.io/api/core/v1.VolumeMount"},
 	}
 }
 
@@ -1720,20 +1720,34 @@ func schema_pkg_apis_serving_v1beta1_ComponentExtensionSpec(ref common.Reference
 					"logger": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Activate request/response logging and logger configurations",
-							Ref:         ref("./pkg/apis/serving/v1beta1.LoggerSpec"),
+							Ref:         ref("github.com/kserve/kserve/pkg/apis/serving/v1beta1.LoggerSpec"),
 						},
 					},
 					"batcher": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Activate request batching and batching configurations",
-							Ref:         ref("./pkg/apis/serving/v1beta1.Batcher"),
+							Ref:         ref("github.com/kserve/kserve/pkg/apis/serving/v1beta1.Batcher"),
+						},
+					},
+					"scaleTriggers": {
+						SchemaProps: spec.SchemaProps{
+							Type: []string{"array"},
+							Items: &spec.SchemaOrArray{
+								Schema: &spec.Schema{
+									SchemaProps: spec.SchemaProps{
+										Default: map[string]interface{}{},
+										Ref:     ref("github.com/kedacore/keda/v2/apis/keda/v1alpha1.ScaleTriggers"),
+									},
+								},
+							},
 						},
 					},
 				},
+				Required: []string{"scaleTriggers"},
 			},
 		},
 		Dependencies: []string{
-			"./pkg/apis/serving/v1beta1.Batcher", "./pkg/apis/serving/v1beta1.LoggerSpec"},
+			"github.com/kedacore/keda/v2/apis/keda/v1alpha1.ScaleTriggers", "github.com/kserve/kserve/pkg/apis/serving/v1beta1.Batcher", "github.com/kserve/kserve/pkg/apis/serving/v1beta1.LoggerSpec"},
 	}
 }
 
@@ -3305,7 +3319,7 @@ func schema_pkg_apis_serving_v1beta1_ExplainerExtensionSpec(ref common.Reference
 					"storage": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Storage Spec for model location",
-							Ref:         ref("./pkg/apis/serving/v1beta1.StorageSpec"),
+							Ref:         ref("github.com/kserve/kserve/pkg/apis/serving/v1beta1.StorageSpec"),
 						},
 					},
 				},
@@ -3313,7 +3327,7 @@ func schema_pkg_apis_serving_v1beta1_ExplainerExtensionSpec(ref common.Reference
 			},
 		},
 		Dependencies: []string{
-			"./pkg/apis/serving/v1beta1.StorageSpec", "k8s.io/api/core/v1.ContainerPort", "k8s.io/api/core/v1.EnvFromSource", "k8s.io/api/core/v1.EnvVar", "k8s.io/api/core/v1.Lifecycle", "k8s.io/api/core/v1.Probe", "k8s.io/api/core/v1.ResourceRequirements", "k8s.io/api/core/v1.SecurityContext", "k8s.io/api/core/v1.VolumeDevice", "k8s.io/api/core/v1.VolumeMount"},
+			"github.com/kserve/kserve/pkg/apis/serving/v1beta1.StorageSpec", "k8s.io/api/core/v1.ContainerPort", "k8s.io/api/core/v1.EnvFromSource", "k8s.io/api/core/v1.EnvVar", "k8s.io/api/core/v1.Lifecycle", "k8s.io/api/core/v1.Probe", "k8s.io/api/core/v1.ResourceRequirements", "k8s.io/api/core/v1.SecurityContext", "k8s.io/api/core/v1.VolumeDevice", "k8s.io/api/core/v1.VolumeMount"},
 	}
 }
 
@@ -3327,19 +3341,19 @@ func schema_pkg_apis_serving_v1beta1_ExplainerSpec(ref common.ReferenceCallback)
 					"alibi": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Spec for alibi explainer",
-							Ref:         ref("./pkg/apis/serving/v1beta1.AlibiExplainerSpec"),
+							Ref:         ref("github.com/kserve/kserve/pkg/apis/serving/v1beta1.AlibiExplainerSpec"),
 						},
 					},
 					"aix": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Spec for AIX explainer",
-							Ref:         ref("./pkg/apis/serving/v1beta1.AIXExplainerSpec"),
+							Ref:         ref("github.com/kserve/kserve/pkg/apis/serving/v1beta1.AIXExplainerSpec"),
 						},
 					},
 					"art": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Spec for ART explainer",
-							Ref:         ref("./pkg/apis/serving/v1beta1.ARTExplainerSpec"),
+							Ref:         ref("github.com/kserve/kserve/pkg/apis/serving/v1beta1.ARTExplainerSpec"),
 						},
 					},
 					"volumes": {
@@ -3749,20 +3763,34 @@ func schema_pkg_apis_serving_v1beta1_ExplainerSpec(ref common.ReferenceCallback)
 					"logger": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Activate request/response logging and logger configurations",
-							Ref:         ref("./pkg/apis/serving/v1beta1.LoggerSpec"),
+							Ref:         ref("github.com/kserve/kserve/pkg/apis/serving/v1beta1.LoggerSpec"),
 						},
 					},
 					"batcher": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Activate request batching and batching configurations",
-							Ref:         ref("./pkg/apis/serving/v1beta1.Batcher"),
+							Ref:         ref("github.com/kserve/kserve/pkg/apis/serving/v1beta1.Batcher"),
+						},
+					},
+					"scaleTriggers": {
+						SchemaProps: spec.SchemaProps{
+							Type: []string{"array"},
+							Items: &spec.SchemaOrArray{
+								Schema: &spec.Schema{
+									SchemaProps: spec.SchemaProps{
+										Default: map[string]interface{}{},
+										Ref:     ref("github.com/kedacore/keda/v2/apis/keda/v1alpha1.ScaleTriggers"),
+									},
+								},
+							},
 						},
 					},
 				},
+				Required: []string{"scaleTriggers"},
 			},
 		},
 		Dependencies: []string{
-			"./pkg/apis/serving/v1beta1.AIXExplainerSpec", "./pkg/apis/serving/v1beta1.ARTExplainerSpec", "./pkg/apis/serving/v1beta1.AlibiExplainerSpec", "./pkg/apis/serving/v1beta1.Batcher", "./pkg/apis/serving/v1beta1.LoggerSpec", "k8s.io/api/core/v1.Affinity", "k8s.io/api/core/v1.Container", "k8s.io/api/core/v1.EphemeralContainer", "k8s.io/api/core/v1.HostAlias", "k8s.io/api/core/v1.LocalObjectReference", "k8s.io/api/core/v1.PodDNSConfig", "k8s.io/api/core/v1.PodReadinessGate", "k8s.io/api/core/v1.PodSecurityContext", "k8s.io/api/core/v1.Toleration", "k8s.io/api/core/v1.TopologySpreadConstraint", "k8s.io/api/core/v1.Volume", "k8s.io/apimachinery/pkg/api/resource.Quantity"},
+			"github.com/kedacore/keda/v2/apis/keda/v1alpha1.ScaleTriggers", "github.com/kserve/kserve/pkg/apis/serving/v1beta1.AIXExplainerSpec", "github.com/kserve/kserve/pkg/apis/serving/v1beta1.ARTExplainerSpec", "github.com/kserve/kserve/pkg/apis/serving/v1beta1.AlibiExplainerSpec", "github.com/kserve/kserve/pkg/apis/serving/v1beta1.Batcher", "github.com/kserve/kserve/pkg/apis/serving/v1beta1.LoggerSpec", "k8s.io/api/core/v1.Affinity", "k8s.io/api/core/v1.Container", "k8s.io/api/core/v1.EphemeralContainer", "k8s.io/api/core/v1.HostAlias", "k8s.io/api/core/v1.LocalObjectReference", "k8s.io/api/core/v1.PodDNSConfig", "k8s.io/api/core/v1.PodReadinessGate", "k8s.io/api/core/v1.PodSecurityContext", "k8s.io/api/core/v1.Toleration", "k8s.io/api/core/v1.TopologySpreadConstraint", "k8s.io/api/core/v1.Volume", "k8s.io/apimachinery/pkg/api/resource.Quantity"},
 	}
 }
 
@@ -3775,26 +3803,26 @@ func schema_pkg_apis_serving_v1beta1_ExplainersConfig(ref common.ReferenceCallba
 					"alibi": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("./pkg/apis/serving/v1beta1.ExplainerConfig"),
+							Ref:     ref("github.com/kserve/kserve/pkg/apis/serving/v1beta1.ExplainerConfig"),
 						},
 					},
 					"aix": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("./pkg/apis/serving/v1beta1.ExplainerConfig"),
+							Ref:     ref("github.com/kserve/kserve/pkg/apis/serving/v1beta1.ExplainerConfig"),
 						},
 					},
 					"art": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("./pkg/apis/serving/v1beta1.ExplainerConfig"),
+							Ref:     ref("github.com/kserve/kserve/pkg/apis/serving/v1beta1.ExplainerConfig"),
 						},
 					},
 				},
 			},
 		},
 		Dependencies: []string{
-			"./pkg/apis/serving/v1beta1.ExplainerConfig"},
+			"github.com/kserve/kserve/pkg/apis/serving/v1beta1.ExplainerConfig"},
 	}
 }
 
@@ -3876,20 +3904,20 @@ func schema_pkg_apis_serving_v1beta1_InferenceService(ref common.ReferenceCallba
 					"spec": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("./pkg/apis/serving/v1beta1.InferenceServiceSpec"),
+							Ref:     ref("github.com/kserve/kserve/pkg/apis/serving/v1beta1.InferenceServiceSpec"),
 						},
 					},
 					"status": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("./pkg/apis/serving/v1beta1.InferenceServiceStatus"),
+							Ref:     ref("github.com/kserve/kserve/pkg/apis/serving/v1beta1.InferenceServiceStatus"),
 						},
 					},
 				},
 			},
 		},
 		Dependencies: []string{
-			"./pkg/apis/serving/v1beta1.InferenceServiceSpec", "./pkg/apis/serving/v1beta1.InferenceServiceStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
+			"github.com/kserve/kserve/pkg/apis/serving/v1beta1.InferenceServiceSpec", "github.com/kserve/kserve/pkg/apis/serving/v1beta1.InferenceServiceStatus", "k8s.io/apimachinery/pkg/apis/meta/v1.ObjectMeta"},
 	}
 }
 
@@ -3932,7 +3960,7 @@ func schema_pkg_apis_serving_v1beta1_InferenceServiceList(ref common.ReferenceCa
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("./pkg/apis/serving/v1beta1.InferenceService"),
+										Ref:     ref("github.com/kserve/kserve/pkg/apis/serving/v1beta1.InferenceService"),
 									},
 								},
 							},
@@ -3943,7 +3971,7 @@ func schema_pkg_apis_serving_v1beta1_InferenceServiceList(ref common.ReferenceCa
 			},
 		},
 		Dependencies: []string{
-			"./pkg/apis/serving/v1beta1.InferenceService", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
+			"github.com/kserve/kserve/pkg/apis/serving/v1beta1.InferenceService", "k8s.io/apimachinery/pkg/apis/meta/v1.ListMeta"},
 	}
 }
 
@@ -3958,19 +3986,19 @@ func schema_pkg_apis_serving_v1beta1_InferenceServiceSpec(ref common.ReferenceCa
 						SchemaProps: spec.SchemaProps{
 							Description: "Predictor defines the model serving spec",
 							Default:     map[string]interface{}{},
-							Ref:         ref("./pkg/apis/serving/v1beta1.PredictorSpec"),
+							Ref:         ref("github.com/kserve/kserve/pkg/apis/serving/v1beta1.PredictorSpec"),
 						},
 					},
 					"explainer": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Explainer defines the model explanation service spec, explainer service calls to predictor or transformer if it is specified.",
-							Ref:         ref("./pkg/apis/serving/v1beta1.ExplainerSpec"),
+							Ref:         ref("github.com/kserve/kserve/pkg/apis/serving/v1beta1.ExplainerSpec"),
 						},
 					},
 					"transformer": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Transformer defines the pre/post processing before and after the predictor call, transformer service calls to predictor service.",
-							Ref:         ref("./pkg/apis/serving/v1beta1.TransformerSpec"),
+							Ref:         ref("github.com/kserve/kserve/pkg/apis/serving/v1beta1.TransformerSpec"),
 						},
 					},
 				},
@@ -3978,7 +4006,7 @@ func schema_pkg_apis_serving_v1beta1_InferenceServiceSpec(ref common.ReferenceCa
 			},
 		},
 		Dependencies: []string{
-			"./pkg/apis/serving/v1beta1.ExplainerSpec", "./pkg/apis/serving/v1beta1.PredictorSpec", "./pkg/apis/serving/v1beta1.TransformerSpec"},
+			"github.com/kserve/kserve/pkg/apis/serving/v1beta1.ExplainerSpec", "github.com/kserve/kserve/pkg/apis/serving/v1beta1.PredictorSpec", "github.com/kserve/kserve/pkg/apis/serving/v1beta1.TransformerSpec"},
 	}
 }
 
@@ -4053,7 +4081,7 @@ func schema_pkg_apis_serving_v1beta1_InferenceServiceStatus(ref common.Reference
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
 										Default: map[string]interface{}{},
-										Ref:     ref("./pkg/apis/serving/v1beta1.ComponentStatusSpec"),
+										Ref:     ref("github.com/kserve/kserve/pkg/apis/serving/v1beta1.ComponentStatusSpec"),
 									},
 								},
 							},
@@ -4063,14 +4091,14 @@ func schema_pkg_apis_serving_v1beta1_InferenceServiceStatus(ref common.Reference
 						SchemaProps: spec.SchemaProps{
 							Description: "Model related statuses",
 							Default:     map[string]interface{}{},
-							Ref:         ref("./pkg/apis/serving/v1beta1.ModelStatus"),
+							Ref:         ref("github.com/kserve/kserve/pkg/apis/serving/v1beta1.ModelStatus"),
 						},
 					},
 				},
 			},
 		},
 		Dependencies: []string{
-			"./pkg/apis/serving/v1beta1.ComponentStatusSpec", "./pkg/apis/serving/v1beta1.ModelStatus", "knative.dev/pkg/apis.Condition", "knative.dev/pkg/apis.URL", "knative.dev/pkg/apis/duck/v1.Addressable"},
+			"github.com/kserve/kserve/pkg/apis/serving/v1beta1.ComponentStatusSpec", "github.com/kserve/kserve/pkg/apis/serving/v1beta1.ModelStatus", "knative.dev/pkg/apis.Condition", "knative.dev/pkg/apis.URL", "knative.dev/pkg/apis/duck/v1.Addressable"},
 	}
 }
 
@@ -4084,21 +4112,21 @@ func schema_pkg_apis_serving_v1beta1_InferenceServicesConfig(ref common.Referenc
 						SchemaProps: spec.SchemaProps{
 							Description: "Transformer configurations",
 							Default:     map[string]interface{}{},
-							Ref:         ref("./pkg/apis/serving/v1beta1.TransformersConfig"),
+							Ref:         ref("github.com/kserve/kserve/pkg/apis/serving/v1beta1.TransformersConfig"),
 						},
 					},
 					"predictors": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Predictor configurations",
 							Default:     map[string]interface{}{},
-							Ref:         ref("./pkg/apis/serving/v1beta1.PredictorsConfig"),
+							Ref:         ref("github.com/kserve/kserve/pkg/apis/serving/v1beta1.PredictorsConfig"),
 						},
 					},
 					"explainers": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Explainer configurations",
 							Default:     map[string]interface{}{},
-							Ref:         ref("./pkg/apis/serving/v1beta1.ExplainersConfig"),
+							Ref:         ref("github.com/kserve/kserve/pkg/apis/serving/v1beta1.ExplainersConfig"),
 						},
 					},
 				},
@@ -4106,7 +4134,7 @@ func schema_pkg_apis_serving_v1beta1_InferenceServicesConfig(ref common.Referenc
 			},
 		},
 		Dependencies: []string{
-			"./pkg/apis/serving/v1beta1.ExplainersConfig", "./pkg/apis/serving/v1beta1.PredictorsConfig", "./pkg/apis/serving/v1beta1.TransformersConfig"},
+			"github.com/kserve/kserve/pkg/apis/serving/v1beta1.ExplainersConfig", "github.com/kserve/kserve/pkg/apis/serving/v1beta1.PredictorsConfig", "github.com/kserve/kserve/pkg/apis/serving/v1beta1.TransformersConfig"},
 	}
 }
 
@@ -4425,7 +4453,7 @@ func schema_pkg_apis_serving_v1beta1_LightGBMSpec(ref common.ReferenceCallback) 
 					"storage": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Storage Spec for model location",
-							Ref:         ref("./pkg/apis/serving/v1beta1.StorageSpec"),
+							Ref:         ref("github.com/kserve/kserve/pkg/apis/serving/v1beta1.StorageSpec"),
 						},
 					},
 				},
@@ -4433,7 +4461,7 @@ func schema_pkg_apis_serving_v1beta1_LightGBMSpec(ref common.ReferenceCallback) 
 			},
 		},
 		Dependencies: []string{
-			"./pkg/apis/serving/v1beta1.StorageSpec", "k8s.io/api/core/v1.ContainerPort", "k8s.io/api/core/v1.EnvFromSource", "k8s.io/api/core/v1.EnvVar", "k8s.io/api/core/v1.Lifecycle", "k8s.io/api/core/v1.Probe", "k8s.io/api/core/v1.ResourceRequirements", "k8s.io/api/core/v1.SecurityContext", "k8s.io/api/core/v1.VolumeDevice", "k8s.io/api/core/v1.VolumeMount"},
+			"github.com/kserve/kserve/pkg/apis/serving/v1beta1.StorageSpec", "k8s.io/api/core/v1.ContainerPort", "k8s.io/api/core/v1.EnvFromSource", "k8s.io/api/core/v1.EnvVar", "k8s.io/api/core/v1.Lifecycle", "k8s.io/api/core/v1.Probe", "k8s.io/api/core/v1.ResourceRequirements", "k8s.io/api/core/v1.SecurityContext", "k8s.io/api/core/v1.VolumeDevice", "k8s.io/api/core/v1.VolumeMount"},
 	}
 }
 
@@ -4557,7 +4585,7 @@ func schema_pkg_apis_serving_v1beta1_ModelSpec(ref common.ReferenceCallback) com
 						SchemaProps: spec.SchemaProps{
 							Description: "ModelFormat being served.",
 							Default:     map[string]interface{}{},
-							Ref:         ref("./pkg/apis/serving/v1beta1.ModelFormat"),
+							Ref:         ref("github.com/kserve/kserve/pkg/apis/serving/v1beta1.ModelFormat"),
 						},
 					},
 					"runtime": {
@@ -4821,7 +4849,7 @@ func schema_pkg_apis_serving_v1beta1_ModelSpec(ref common.ReferenceCallback) com
 					"storage": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Storage Spec for model location",
-							Ref:         ref("./pkg/apis/serving/v1beta1.StorageSpec"),
+							Ref:         ref("github.com/kserve/kserve/pkg/apis/serving/v1beta1.StorageSpec"),
 						},
 					},
 				},
@@ -4829,7 +4857,7 @@ func schema_pkg_apis_serving_v1beta1_ModelSpec(ref common.ReferenceCallback) com
 			},
 		},
 		Dependencies: []string{
-			"./pkg/apis/serving/v1beta1.ModelFormat", "./pkg/apis/serving/v1beta1.StorageSpec", "k8s.io/api/core/v1.ContainerPort", "k8s.io/api/core/v1.EnvFromSource", "k8s.io/api/core/v1.EnvVar", "k8s.io/api/core/v1.Lifecycle", "k8s.io/api/core/v1.Probe", "k8s.io/api/core/v1.ResourceRequirements", "k8s.io/api/core/v1.SecurityContext", "k8s.io/api/core/v1.VolumeDevice", "k8s.io/api/core/v1.VolumeMount"},
+			"github.com/kserve/kserve/pkg/apis/serving/v1beta1.ModelFormat", "github.com/kserve/kserve/pkg/apis/serving/v1beta1.StorageSpec", "k8s.io/api/core/v1.ContainerPort", "k8s.io/api/core/v1.EnvFromSource", "k8s.io/api/core/v1.EnvVar", "k8s.io/api/core/v1.Lifecycle", "k8s.io/api/core/v1.Probe", "k8s.io/api/core/v1.ResourceRequirements", "k8s.io/api/core/v1.SecurityContext", "k8s.io/api/core/v1.VolumeDevice", "k8s.io/api/core/v1.VolumeMount"},
 	}
 }
 
@@ -4850,19 +4878,19 @@ func schema_pkg_apis_serving_v1beta1_ModelStatus(ref common.ReferenceCallback) c
 					"states": {
 						SchemaProps: spec.SchemaProps{
 							Description: "State information of the predictor's model.",
-							Ref:         ref("./pkg/apis/serving/v1beta1.ModelRevisionStates"),
+							Ref:         ref("github.com/kserve/kserve/pkg/apis/serving/v1beta1.ModelRevisionStates"),
 						},
 					},
 					"lastFailureInfo": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Details of last failure, when load of target model is failed or blocked.",
-							Ref:         ref("./pkg/apis/serving/v1beta1.FailureInfo"),
+							Ref:         ref("github.com/kserve/kserve/pkg/apis/serving/v1beta1.FailureInfo"),
 						},
 					},
 					"copies": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Model copy information of the predictor's model.",
-							Ref:         ref("./pkg/apis/serving/v1beta1.ModelCopies"),
+							Ref:         ref("github.com/kserve/kserve/pkg/apis/serving/v1beta1.ModelCopies"),
 						},
 					},
 				},
@@ -4870,7 +4898,7 @@ func schema_pkg_apis_serving_v1beta1_ModelStatus(ref common.ReferenceCallback) c
 			},
 		},
 		Dependencies: []string{
-			"./pkg/apis/serving/v1beta1.FailureInfo", "./pkg/apis/serving/v1beta1.ModelCopies", "./pkg/apis/serving/v1beta1.ModelRevisionStates"},
+			"github.com/kserve/kserve/pkg/apis/serving/v1beta1.FailureInfo", "github.com/kserve/kserve/pkg/apis/serving/v1beta1.ModelCopies", "github.com/kserve/kserve/pkg/apis/serving/v1beta1.ModelRevisionStates"},
 	}
 }
 
@@ -5135,7 +5163,7 @@ func schema_pkg_apis_serving_v1beta1_ONNXRuntimeSpec(ref common.ReferenceCallbac
 					"storage": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Storage Spec for model location",
-							Ref:         ref("./pkg/apis/serving/v1beta1.StorageSpec"),
+							Ref:         ref("github.com/kserve/kserve/pkg/apis/serving/v1beta1.StorageSpec"),
 						},
 					},
 				},
@@ -5143,7 +5171,7 @@ func schema_pkg_apis_serving_v1beta1_ONNXRuntimeSpec(ref common.ReferenceCallbac
 			},
 		},
 		Dependencies: []string{
-			"./pkg/apis/serving/v1beta1.StorageSpec", "k8s.io/api/core/v1.ContainerPort", "k8s.io/api/core/v1.EnvFromSource", "k8s.io/api/core/v1.EnvVar", "k8s.io/api/core/v1.Lifecycle", "k8s.io/api/core/v1.Probe", "k8s.io/api/core/v1.ResourceRequirements", "k8s.io/api/core/v1.SecurityContext", "k8s.io/api/core/v1.VolumeDevice", "k8s.io/api/core/v1.VolumeMount"},
+			"github.com/kserve/kserve/pkg/apis/serving/v1beta1.StorageSpec", "k8s.io/api/core/v1.ContainerPort", "k8s.io/api/core/v1.EnvFromSource", "k8s.io/api/core/v1.EnvVar", "k8s.io/api/core/v1.Lifecycle", "k8s.io/api/core/v1.Probe", "k8s.io/api/core/v1.ResourceRequirements", "k8s.io/api/core/v1.SecurityContext", "k8s.io/api/core/v1.VolumeDevice", "k8s.io/api/core/v1.VolumeMount"},
 	}
 }
 
@@ -5408,7 +5436,7 @@ func schema_pkg_apis_serving_v1beta1_PMMLSpec(ref common.ReferenceCallback) comm
 					"storage": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Storage Spec for model location",
-							Ref:         ref("./pkg/apis/serving/v1beta1.StorageSpec"),
+							Ref:         ref("github.com/kserve/kserve/pkg/apis/serving/v1beta1.StorageSpec"),
 						},
 					},
 				},
@@ -5416,7 +5444,7 @@ func schema_pkg_apis_serving_v1beta1_PMMLSpec(ref common.ReferenceCallback) comm
 			},
 		},
 		Dependencies: []string{
-			"./pkg/apis/serving/v1beta1.StorageSpec", "k8s.io/api/core/v1.ContainerPort", "k8s.io/api/core/v1.EnvFromSource", "k8s.io/api/core/v1.EnvVar", "k8s.io/api/core/v1.Lifecycle", "k8s.io/api/core/v1.Probe", "k8s.io/api/core/v1.ResourceRequirements", "k8s.io/api/core/v1.SecurityContext", "k8s.io/api/core/v1.VolumeDevice", "k8s.io/api/core/v1.VolumeMount"},
+			"github.com/kserve/kserve/pkg/apis/serving/v1beta1.StorageSpec", "k8s.io/api/core/v1.ContainerPort", "k8s.io/api/core/v1.EnvFromSource", "k8s.io/api/core/v1.EnvVar", "k8s.io/api/core/v1.Lifecycle", "k8s.io/api/core/v1.Probe", "k8s.io/api/core/v1.ResourceRequirements", "k8s.io/api/core/v1.SecurityContext", "k8s.io/api/core/v1.VolumeDevice", "k8s.io/api/core/v1.VolumeMount"},
 	}
 }
 
@@ -5680,7 +5708,7 @@ func schema_pkg_apis_serving_v1beta1_PaddleServerSpec(ref common.ReferenceCallba
 					"storage": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Storage Spec for model location",
-							Ref:         ref("./pkg/apis/serving/v1beta1.StorageSpec"),
+							Ref:         ref("github.com/kserve/kserve/pkg/apis/serving/v1beta1.StorageSpec"),
 						},
 					},
 				},
@@ -5688,7 +5716,7 @@ func schema_pkg_apis_serving_v1beta1_PaddleServerSpec(ref common.ReferenceCallba
 			},
 		},
 		Dependencies: []string{
-			"./pkg/apis/serving/v1beta1.StorageSpec", "k8s.io/api/core/v1.ContainerPort", "k8s.io/api/core/v1.EnvFromSource", "k8s.io/api/core/v1.EnvVar", "k8s.io/api/core/v1.Lifecycle", "k8s.io/api/core/v1.Probe", "k8s.io/api/core/v1.ResourceRequirements", "k8s.io/api/core/v1.SecurityContext", "k8s.io/api/core/v1.VolumeDevice", "k8s.io/api/core/v1.VolumeMount"},
+			"github.com/kserve/kserve/pkg/apis/serving/v1beta1.StorageSpec", "k8s.io/api/core/v1.ContainerPort", "k8s.io/api/core/v1.EnvFromSource", "k8s.io/api/core/v1.EnvVar", "k8s.io/api/core/v1.Lifecycle", "k8s.io/api/core/v1.Probe", "k8s.io/api/core/v1.ResourceRequirements", "k8s.io/api/core/v1.SecurityContext", "k8s.io/api/core/v1.VolumeDevice", "k8s.io/api/core/v1.VolumeMount"},
 	}
 }
 
@@ -6403,7 +6431,7 @@ func schema_pkg_apis_serving_v1beta1_PredictorExtensionSpec(ref common.Reference
 					"storage": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Storage Spec for model location",
-							Ref:         ref("./pkg/apis/serving/v1beta1.StorageSpec"),
+							Ref:         ref("github.com/kserve/kserve/pkg/apis/serving/v1beta1.StorageSpec"),
 						},
 					},
 				},
@@ -6411,7 +6439,7 @@ func schema_pkg_apis_serving_v1beta1_PredictorExtensionSpec(ref common.Reference
 			},
 		},
 		Dependencies: []string{
-			"./pkg/apis/serving/v1beta1.StorageSpec", "k8s.io/api/core/v1.ContainerPort", "k8s.io/api/core/v1.EnvFromSource", "k8s.io/api/core/v1.EnvVar", "k8s.io/api/core/v1.Lifecycle", "k8s.io/api/core/v1.Probe", "k8s.io/api/core/v1.ResourceRequirements", "k8s.io/api/core/v1.SecurityContext", "k8s.io/api/core/v1.VolumeDevice", "k8s.io/api/core/v1.VolumeMount"},
+			"github.com/kserve/kserve/pkg/apis/serving/v1beta1.StorageSpec", "k8s.io/api/core/v1.ContainerPort", "k8s.io/api/core/v1.EnvFromSource", "k8s.io/api/core/v1.EnvVar", "k8s.io/api/core/v1.Lifecycle", "k8s.io/api/core/v1.Probe", "k8s.io/api/core/v1.ResourceRequirements", "k8s.io/api/core/v1.SecurityContext", "k8s.io/api/core/v1.VolumeDevice", "k8s.io/api/core/v1.VolumeMount"},
 	}
 }
 
@@ -6423,19 +6451,19 @@ func schema_pkg_apis_serving_v1beta1_PredictorProtocols(ref common.ReferenceCall
 				Properties: map[string]spec.Schema{
 					"v1": {
 						SchemaProps: spec.SchemaProps{
-							Ref: ref("./pkg/apis/serving/v1beta1.PredictorConfig"),
+							Ref: ref("github.com/kserve/kserve/pkg/apis/serving/v1beta1.PredictorConfig"),
 						},
 					},
 					"v2": {
 						SchemaProps: spec.SchemaProps{
-							Ref: ref("./pkg/apis/serving/v1beta1.PredictorConfig"),
+							Ref: ref("github.com/kserve/kserve/pkg/apis/serving/v1beta1.PredictorConfig"),
 						},
 					},
 				},
 			},
 		},
 		Dependencies: []string{
-			"./pkg/apis/serving/v1beta1.PredictorConfig"},
+			"github.com/kserve/kserve/pkg/apis/serving/v1beta1.PredictorConfig"},
 	}
 }
 
@@ -6449,61 +6477,61 @@ func schema_pkg_apis_serving_v1beta1_PredictorSpec(ref common.ReferenceCallback)
 					"sklearn": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Spec for SKLearn model server",
-							Ref:         ref("./pkg/apis/serving/v1beta1.SKLearnSpec"),
+							Ref:         ref("github.com/kserve/kserve/pkg/apis/serving/v1beta1.SKLearnSpec"),
 						},
 					},
 					"xgboost": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Spec for XGBoost model server",
-							Ref:         ref("./pkg/apis/serving/v1beta1.XGBoostSpec"),
+							Ref:         ref("github.com/kserve/kserve/pkg/apis/serving/v1beta1.XGBoostSpec"),
 						},
 					},
 					"tensorflow": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Spec for TFServing (https://github.com/tensorflow/serving)",
-							Ref:         ref("./pkg/apis/serving/v1beta1.TFServingSpec"),
+							Ref:         ref("github.com/kserve/kserve/pkg/apis/serving/v1beta1.TFServingSpec"),
 						},
 					},
 					"pytorch": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Spec for TorchServe (https://pytorch.org/serve)",
-							Ref:         ref("./pkg/apis/serving/v1beta1.TorchServeSpec"),
+							Ref:         ref("github.com/kserve/kserve/pkg/apis/serving/v1beta1.TorchServeSpec"),
 						},
 					},
 					"triton": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Spec for Triton Inference Server (https://github.com/triton-inference-server/server)",
-							Ref:         ref("./pkg/apis/serving/v1beta1.TritonSpec"),
+							Ref:         ref("github.com/kserve/kserve/pkg/apis/serving/v1beta1.TritonSpec"),
 						},
 					},
 					"onnx": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Spec for ONNX runtime (https://github.com/microsoft/onnxruntime)",
-							Ref:         ref("./pkg/apis/serving/v1beta1.ONNXRuntimeSpec"),
+							Ref:         ref("github.com/kserve/kserve/pkg/apis/serving/v1beta1.ONNXRuntimeSpec"),
 						},
 					},
 					"pmml": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Spec for PMML (http://dmg.org/pmml/v4-1/GeneralStructure.html)",
-							Ref:         ref("./pkg/apis/serving/v1beta1.PMMLSpec"),
+							Ref:         ref("github.com/kserve/kserve/pkg/apis/serving/v1beta1.PMMLSpec"),
 						},
 					},
 					"lightgbm": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Spec for LightGBM model server",
-							Ref:         ref("./pkg/apis/serving/v1beta1.LightGBMSpec"),
+							Ref:         ref("github.com/kserve/kserve/pkg/apis/serving/v1beta1.LightGBMSpec"),
 						},
 					},
 					"paddle": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Spec for Paddle model server (https://github.com/PaddlePaddle/Serving)",
-							Ref:         ref("./pkg/apis/serving/v1beta1.PaddleServerSpec"),
+							Ref:         ref("github.com/kserve/kserve/pkg/apis/serving/v1beta1.PaddleServerSpec"),
 						},
 					},
 					"model": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Model spec for any arbitrary framework.",
-							Ref:         ref("./pkg/apis/serving/v1beta1.ModelSpec"),
+							Ref:         ref("github.com/kserve/kserve/pkg/apis/serving/v1beta1.ModelSpec"),
 						},
 					},
 					"volumes": {
@@ -6913,20 +6941,34 @@ func schema_pkg_apis_serving_v1beta1_PredictorSpec(ref common.ReferenceCallback)
 					"logger": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Activate request/response logging and logger configurations",
-							Ref:         ref("./pkg/apis/serving/v1beta1.LoggerSpec"),
+							Ref:         ref("github.com/kserve/kserve/pkg/apis/serving/v1beta1.LoggerSpec"),
 						},
 					},
 					"batcher": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Activate request batching and batching configurations",
-							Ref:         ref("./pkg/apis/serving/v1beta1.Batcher"),
+							Ref:         ref("github.com/kserve/kserve/pkg/apis/serving/v1beta1.Batcher"),
+						},
+					},
+					"scaleTriggers": {
+						SchemaProps: spec.SchemaProps{
+							Type: []string{"array"},
+							Items: &spec.SchemaOrArray{
+								Schema: &spec.Schema{
+									SchemaProps: spec.SchemaProps{
+										Default: map[string]interface{}{},
+										Ref:     ref("github.com/kedacore/keda/v2/apis/keda/v1alpha1.ScaleTriggers"),
+									},
+								},
+							},
 						},
 					},
 				},
+				Required: []string{"scaleTriggers"},
 			},
 		},
 		Dependencies: []string{
-			"./pkg/apis/serving/v1beta1.Batcher", "./pkg/apis/serving/v1beta1.LightGBMSpec", "./pkg/apis/serving/v1beta1.LoggerSpec", "./pkg/apis/serving/v1beta1.ModelSpec", "./pkg/apis/serving/v1beta1.ONNXRuntimeSpec", "./pkg/apis/serving/v1beta1.PMMLSpec", "./pkg/apis/serving/v1beta1.PaddleServerSpec", "./pkg/apis/serving/v1beta1.SKLearnSpec", "./pkg/apis/serving/v1beta1.TFServingSpec", "./pkg/apis/serving/v1beta1.TorchServeSpec", "./pkg/apis/serving/v1beta1.TritonSpec", "./pkg/apis/serving/v1beta1.XGBoostSpec", "k8s.io/api/core/v1.Affinity", "k8s.io/api/core/v1.Container", "k8s.io/api/core/v1.EphemeralContainer", "k8s.io/api/core/v1.HostAlias", "k8s.io/api/core/v1.LocalObjectReference", "k8s.io/api/core/v1.PodDNSConfig", "k8s.io/api/core/v1.PodReadinessGate", "k8s.io/api/core/v1.PodSecurityContext", "k8s.io/api/core/v1.Toleration", "k8s.io/api/core/v1.TopologySpreadConstraint", "k8s.io/api/core/v1.Volume", "k8s.io/apimachinery/pkg/api/resource.Quantity"},
+			"github.com/kedacore/keda/v2/apis/keda/v1alpha1.ScaleTriggers", "github.com/kserve/kserve/pkg/apis/serving/v1beta1.Batcher", "github.com/kserve/kserve/pkg/apis/serving/v1beta1.LightGBMSpec", "github.com/kserve/kserve/pkg/apis/serving/v1beta1.LoggerSpec", "github.com/kserve/kserve/pkg/apis/serving/v1beta1.ModelSpec", "github.com/kserve/kserve/pkg/apis/serving/v1beta1.ONNXRuntimeSpec", "github.com/kserve/kserve/pkg/apis/serving/v1beta1.PMMLSpec", "github.com/kserve/kserve/pkg/apis/serving/v1beta1.PaddleServerSpec", "github.com/kserve/kserve/pkg/apis/serving/v1beta1.SKLearnSpec", "github.com/kserve/kserve/pkg/apis/serving/v1beta1.TFServingSpec", "github.com/kserve/kserve/pkg/apis/serving/v1beta1.TorchServeSpec", "github.com/kserve/kserve/pkg/apis/serving/v1beta1.TritonSpec", "github.com/kserve/kserve/pkg/apis/serving/v1beta1.XGBoostSpec", "k8s.io/api/core/v1.Affinity", "k8s.io/api/core/v1.Container", "k8s.io/api/core/v1.EphemeralContainer", "k8s.io/api/core/v1.HostAlias", "k8s.io/api/core/v1.LocalObjectReference", "k8s.io/api/core/v1.PodDNSConfig", "k8s.io/api/core/v1.PodReadinessGate", "k8s.io/api/core/v1.PodSecurityContext", "k8s.io/api/core/v1.Toleration", "k8s.io/api/core/v1.TopologySpreadConstraint", "k8s.io/api/core/v1.Volume", "k8s.io/apimachinery/pkg/api/resource.Quantity"},
 	}
 }
 
@@ -6939,62 +6981,62 @@ func schema_pkg_apis_serving_v1beta1_PredictorsConfig(ref common.ReferenceCallba
 					"tensorflow": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("./pkg/apis/serving/v1beta1.PredictorConfig"),
+							Ref:     ref("github.com/kserve/kserve/pkg/apis/serving/v1beta1.PredictorConfig"),
 						},
 					},
 					"triton": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("./pkg/apis/serving/v1beta1.PredictorConfig"),
+							Ref:     ref("github.com/kserve/kserve/pkg/apis/serving/v1beta1.PredictorConfig"),
 						},
 					},
 					"xgboost": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("./pkg/apis/serving/v1beta1.PredictorProtocols"),
+							Ref:     ref("github.com/kserve/kserve/pkg/apis/serving/v1beta1.PredictorProtocols"),
 						},
 					},
 					"sklearn": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("./pkg/apis/serving/v1beta1.PredictorProtocols"),
+							Ref:     ref("github.com/kserve/kserve/pkg/apis/serving/v1beta1.PredictorProtocols"),
 						},
 					},
 					"pytorch": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("./pkg/apis/serving/v1beta1.PredictorConfig"),
+							Ref:     ref("github.com/kserve/kserve/pkg/apis/serving/v1beta1.PredictorConfig"),
 						},
 					},
 					"onnx": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("./pkg/apis/serving/v1beta1.PredictorConfig"),
+							Ref:     ref("github.com/kserve/kserve/pkg/apis/serving/v1beta1.PredictorConfig"),
 						},
 					},
 					"pmml": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("./pkg/apis/serving/v1beta1.PredictorConfig"),
+							Ref:     ref("github.com/kserve/kserve/pkg/apis/serving/v1beta1.PredictorConfig"),
 						},
 					},
 					"lightgbm": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("./pkg/apis/serving/v1beta1.PredictorConfig"),
+							Ref:     ref("github.com/kserve/kserve/pkg/apis/serving/v1beta1.PredictorConfig"),
 						},
 					},
 					"paddle": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("./pkg/apis/serving/v1beta1.PredictorConfig"),
+							Ref:     ref("github.com/kserve/kserve/pkg/apis/serving/v1beta1.PredictorConfig"),
 						},
 					},
 				},
 			},
 		},
 		Dependencies: []string{
-			"./pkg/apis/serving/v1beta1.PredictorConfig", "./pkg/apis/serving/v1beta1.PredictorProtocols"},
+			"github.com/kserve/kserve/pkg/apis/serving/v1beta1.PredictorConfig", "github.com/kserve/kserve/pkg/apis/serving/v1beta1.PredictorProtocols"},
 	}
 }
 
@@ -7259,7 +7301,7 @@ func schema_pkg_apis_serving_v1beta1_SKLearnSpec(ref common.ReferenceCallback) c
 					"storage": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Storage Spec for model location",
-							Ref:         ref("./pkg/apis/serving/v1beta1.StorageSpec"),
+							Ref:         ref("github.com/kserve/kserve/pkg/apis/serving/v1beta1.StorageSpec"),
 						},
 					},
 				},
@@ -7267,7 +7309,7 @@ func schema_pkg_apis_serving_v1beta1_SKLearnSpec(ref common.ReferenceCallback) c
 			},
 		},
 		Dependencies: []string{
-			"./pkg/apis/serving/v1beta1.StorageSpec", "k8s.io/api/core/v1.ContainerPort", "k8s.io/api/core/v1.EnvFromSource", "k8s.io/api/core/v1.EnvVar", "k8s.io/api/core/v1.Lifecycle", "k8s.io/api/core/v1.Probe", "k8s.io/api/core/v1.ResourceRequirements", "k8s.io/api/core/v1.SecurityContext", "k8s.io/api/core/v1.VolumeDevice", "k8s.io/api/core/v1.VolumeMount"},
+			"github.com/kserve/kserve/pkg/apis/serving/v1beta1.StorageSpec", "k8s.io/api/core/v1.ContainerPort", "k8s.io/api/core/v1.EnvFromSource", "k8s.io/api/core/v1.EnvVar", "k8s.io/api/core/v1.Lifecycle", "k8s.io/api/core/v1.Probe", "k8s.io/api/core/v1.ResourceRequirements", "k8s.io/api/core/v1.SecurityContext", "k8s.io/api/core/v1.VolumeDevice", "k8s.io/api/core/v1.VolumeMount"},
 	}
 }
 
@@ -7581,7 +7623,7 @@ func schema_pkg_apis_serving_v1beta1_TFServingSpec(ref common.ReferenceCallback)
 					"storage": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Storage Spec for model location",
-							Ref:         ref("./pkg/apis/serving/v1beta1.StorageSpec"),
+							Ref:         ref("github.com/kserve/kserve/pkg/apis/serving/v1beta1.StorageSpec"),
 						},
 					},
 				},
@@ -7589,7 +7631,7 @@ func schema_pkg_apis_serving_v1beta1_TFServingSpec(ref common.ReferenceCallback)
 			},
 		},
 		Dependencies: []string{
-			"./pkg/apis/serving/v1beta1.StorageSpec", "k8s.io/api/core/v1.ContainerPort", "k8s.io/api/core/v1.EnvFromSource", "k8s.io/api/core/v1.EnvVar", "k8s.io/api/core/v1.Lifecycle", "k8s.io/api/core/v1.Probe", "k8s.io/api/core/v1.ResourceRequirements", "k8s.io/api/core/v1.SecurityContext", "k8s.io/api/core/v1.VolumeDevice", "k8s.io/api/core/v1.VolumeMount"},
+			"github.com/kserve/kserve/pkg/apis/serving/v1beta1.StorageSpec", "k8s.io/api/core/v1.ContainerPort", "k8s.io/api/core/v1.EnvFromSource", "k8s.io/api/core/v1.EnvVar", "k8s.io/api/core/v1.Lifecycle", "k8s.io/api/core/v1.Probe", "k8s.io/api/core/v1.ResourceRequirements", "k8s.io/api/core/v1.SecurityContext", "k8s.io/api/core/v1.VolumeDevice", "k8s.io/api/core/v1.VolumeMount"},
 	}
 }
 
@@ -7854,7 +7896,7 @@ func schema_pkg_apis_serving_v1beta1_TorchServeSpec(ref common.ReferenceCallback
 					"storage": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Storage Spec for model location",
-							Ref:         ref("./pkg/apis/serving/v1beta1.StorageSpec"),
+							Ref:         ref("github.com/kserve/kserve/pkg/apis/serving/v1beta1.StorageSpec"),
 						},
 					},
 				},
@@ -7862,7 +7904,7 @@ func schema_pkg_apis_serving_v1beta1_TorchServeSpec(ref common.ReferenceCallback
 			},
 		},
 		Dependencies: []string{
-			"./pkg/apis/serving/v1beta1.StorageSpec", "k8s.io/api/core/v1.ContainerPort", "k8s.io/api/core/v1.EnvFromSource", "k8s.io/api/core/v1.EnvVar", "k8s.io/api/core/v1.Lifecycle", "k8s.io/api/core/v1.Probe", "k8s.io/api/core/v1.ResourceRequirements", "k8s.io/api/core/v1.SecurityContext", "k8s.io/api/core/v1.VolumeDevice", "k8s.io/api/core/v1.VolumeMount"},
+			"github.com/kserve/kserve/pkg/apis/serving/v1beta1.StorageSpec", "k8s.io/api/core/v1.ContainerPort", "k8s.io/api/core/v1.EnvFromSource", "k8s.io/api/core/v1.EnvVar", "k8s.io/api/core/v1.Lifecycle", "k8s.io/api/core/v1.Probe", "k8s.io/api/core/v1.ResourceRequirements", "k8s.io/api/core/v1.SecurityContext", "k8s.io/api/core/v1.VolumeDevice", "k8s.io/api/core/v1.VolumeMount"},
 	}
 }
 
@@ -8309,20 +8351,34 @@ func schema_pkg_apis_serving_v1beta1_TransformerSpec(ref common.ReferenceCallbac
 					"logger": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Activate request/response logging and logger configurations",
-							Ref:         ref("./pkg/apis/serving/v1beta1.LoggerSpec"),
+							Ref:         ref("github.com/kserve/kserve/pkg/apis/serving/v1beta1.LoggerSpec"),
 						},
 					},
 					"batcher": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Activate request batching and batching configurations",
-							Ref:         ref("./pkg/apis/serving/v1beta1.Batcher"),
+							Ref:         ref("github.com/kserve/kserve/pkg/apis/serving/v1beta1.Batcher"),
+						},
+					},
+					"scaleTriggers": {
+						SchemaProps: spec.SchemaProps{
+							Type: []string{"array"},
+							Items: &spec.SchemaOrArray{
+								Schema: &spec.Schema{
+									SchemaProps: spec.SchemaProps{
+										Default: map[string]interface{}{},
+										Ref:     ref("github.com/kedacore/keda/v2/apis/keda/v1alpha1.ScaleTriggers"),
+									},
+								},
+							},
 						},
 					},
 				},
+				Required: []string{"scaleTriggers"},
 			},
 		},
 		Dependencies: []string{
-			"./pkg/apis/serving/v1beta1.Batcher", "./pkg/apis/serving/v1beta1.LoggerSpec", "k8s.io/api/core/v1.Affinity", "k8s.io/api/core/v1.Container", "k8s.io/api/core/v1.EphemeralContainer", "k8s.io/api/core/v1.HostAlias", "k8s.io/api/core/v1.LocalObjectReference", "k8s.io/api/core/v1.PodDNSConfig", "k8s.io/api/core/v1.PodReadinessGate", "k8s.io/api/core/v1.PodSecurityContext", "k8s.io/api/core/v1.Toleration", "k8s.io/api/core/v1.TopologySpreadConstraint", "k8s.io/api/core/v1.Volume", "k8s.io/apimachinery/pkg/api/resource.Quantity"},
+			"github.com/kedacore/keda/v2/apis/keda/v1alpha1.ScaleTriggers", "github.com/kserve/kserve/pkg/apis/serving/v1beta1.Batcher", "github.com/kserve/kserve/pkg/apis/serving/v1beta1.LoggerSpec", "k8s.io/api/core/v1.Affinity", "k8s.io/api/core/v1.Container", "k8s.io/api/core/v1.EphemeralContainer", "k8s.io/api/core/v1.HostAlias", "k8s.io/api/core/v1.LocalObjectReference", "k8s.io/api/core/v1.PodDNSConfig", "k8s.io/api/core/v1.PodReadinessGate", "k8s.io/api/core/v1.PodSecurityContext", "k8s.io/api/core/v1.Toleration", "k8s.io/api/core/v1.TopologySpreadConstraint", "k8s.io/api/core/v1.Volume", "k8s.io/apimachinery/pkg/api/resource.Quantity"},
 	}
 }
 
@@ -8335,14 +8391,14 @@ func schema_pkg_apis_serving_v1beta1_TransformersConfig(ref common.ReferenceCall
 					"feast": {
 						SchemaProps: spec.SchemaProps{
 							Default: map[string]interface{}{},
-							Ref:     ref("./pkg/apis/serving/v1beta1.TransformerConfig"),
+							Ref:     ref("github.com/kserve/kserve/pkg/apis/serving/v1beta1.TransformerConfig"),
 						},
 					},
 				},
 			},
 		},
 		Dependencies: []string{
-			"./pkg/apis/serving/v1beta1.TransformerConfig"},
+			"github.com/kserve/kserve/pkg/apis/serving/v1beta1.TransformerConfig"},
 	}
 }
 
@@ -8607,7 +8663,7 @@ func schema_pkg_apis_serving_v1beta1_TritonSpec(ref common.ReferenceCallback) co
 					"storage": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Storage Spec for model location",
-							Ref:         ref("./pkg/apis/serving/v1beta1.StorageSpec"),
+							Ref:         ref("github.com/kserve/kserve/pkg/apis/serving/v1beta1.StorageSpec"),
 						},
 					},
 				},
@@ -8615,7 +8671,7 @@ func schema_pkg_apis_serving_v1beta1_TritonSpec(ref common.ReferenceCallback) co
 			},
 		},
 		Dependencies: []string{
-			"./pkg/apis/serving/v1beta1.StorageSpec", "k8s.io/api/core/v1.ContainerPort", "k8s.io/api/core/v1.EnvFromSource", "k8s.io/api/core/v1.EnvVar", "k8s.io/api/core/v1.Lifecycle", "k8s.io/api/core/v1.Probe", "k8s.io/api/core/v1.ResourceRequirements", "k8s.io/api/core/v1.SecurityContext", "k8s.io/api/core/v1.VolumeDevice", "k8s.io/api/core/v1.VolumeMount"},
+			"github.com/kserve/kserve/pkg/apis/serving/v1beta1.StorageSpec", "k8s.io/api/core/v1.ContainerPort", "k8s.io/api/core/v1.EnvFromSource", "k8s.io/api/core/v1.EnvVar", "k8s.io/api/core/v1.Lifecycle", "k8s.io/api/core/v1.Probe", "k8s.io/api/core/v1.ResourceRequirements", "k8s.io/api/core/v1.SecurityContext", "k8s.io/api/core/v1.VolumeDevice", "k8s.io/api/core/v1.VolumeMount"},
 	}
 }
 
@@ -8880,7 +8936,7 @@ func schema_pkg_apis_serving_v1beta1_XGBoostSpec(ref common.ReferenceCallback) c
 					"storage": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Storage Spec for model location",
-							Ref:         ref("./pkg/apis/serving/v1beta1.StorageSpec"),
+							Ref:         ref("github.com/kserve/kserve/pkg/apis/serving/v1beta1.StorageSpec"),
 						},
 					},
 				},
@@ -8888,6 +8944,6 @@ func schema_pkg_apis_serving_v1beta1_XGBoostSpec(ref common.ReferenceCallback) c
 			},
 		},
 		Dependencies: []string{
-			"./pkg/apis/serving/v1beta1.StorageSpec", "k8s.io/api/core/v1.ContainerPort", "k8s.io/api/core/v1.EnvFromSource", "k8s.io/api/core/v1.EnvVar", "k8s.io/api/core/v1.Lifecycle", "k8s.io/api/core/v1.Probe", "k8s.io/api/core/v1.ResourceRequirements", "k8s.io/api/core/v1.SecurityContext", "k8s.io/api/core/v1.VolumeDevice", "k8s.io/api/core/v1.VolumeMount"},
+			"github.com/kserve/kserve/pkg/apis/serving/v1beta1.StorageSpec", "k8s.io/api/core/v1.ContainerPort", "k8s.io/api/core/v1.EnvFromSource", "k8s.io/api/core/v1.EnvVar", "k8s.io/api/core/v1.Lifecycle", "k8s.io/api/core/v1.Probe", "k8s.io/api/core/v1.ResourceRequirements", "k8s.io/api/core/v1.SecurityContext", "k8s.io/api/core/v1.VolumeDevice", "k8s.io/api/core/v1.VolumeMount"},
 	}
 }

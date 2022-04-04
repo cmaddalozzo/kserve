@@ -17,11 +17,11 @@ limitations under the License.
 package autoscaler
 
 import (
-	"github.com/pkg/errors"
-
+	"fmt"
 	"github.com/kserve/kserve/pkg/apis/serving/v1beta1"
 	"github.com/kserve/kserve/pkg/constants"
 	hpa "github.com/kserve/kserve/pkg/controller/v1beta1/inferenceservice/reconcilers/hpa"
+	keda "github.com/kserve/kserve/pkg/controller/v1beta1/inferenceservice/reconcilers/keda"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
 	"sigs.k8s.io/controller-runtime/pkg/client"
@@ -30,21 +30,22 @@ import (
 
 var log = logf.Log.WithName("AutoscalerReconciler")
 
+// Interface implemented by all autoscalers
 type Autoscaler interface {
-  Reconcile() error
-  SetControllerReferences(owner metav1.Object, scheme *runtime.Scheme) error
+	Reconcile() error
+	SetControllerReferences(owner metav1.Object, scheme *runtime.Scheme) error
 }
 
-type NoOpAutoscaler struct {}
+// Autoscaler that does nothing. Can be used to disable creation of autoscaler resources.
+type NoOpAutoscaler struct{}
 
-func (NoOpAutoscaler) Reconcile() error {
-  return nil
+func (*NoOpAutoscaler) Reconcile() error {
+	return nil
 }
 
 func (a *NoOpAutoscaler) SetControllerReferences(owner metav1.Object, scheme *runtime.Scheme) error {
-  return nil
+	return nil
 }
-
 
 //AutoscalerReconciler is the struct of Raw K8S Object
 type AutoscalerReconciler struct {
@@ -85,17 +86,19 @@ func createAutoscaler(client client.Client,
 	ac := getAutoscalerClass(componentMeta)
 	switch ac {
 	case constants.AutoscalerClassHPA:
-      return hpa.NewHPAReconciler(client, scheme, componentMeta, componentExt), nil
+		return hpa.NewHPAReconciler(client, scheme, componentMeta, componentExt), nil
+	case constants.AutoscalerClassKEDA:
+		return keda.NewKedaReconciler(client, scheme, componentMeta, componentExt), nil
 	case constants.AutoscalerClassNone:
-      return &NoOpAutoscaler{}, nil
+		return &NoOpAutoscaler{}, nil
 	default:
-		return nil, errors.New("unknown autoscaler class type.")
+		return nil, fmt.Errorf("Unknown autoscaler class type: %v", ac)
 	}
 }
 
 //Reconcile ...
 func (r *AutoscalerReconciler) Reconcile() error {
 	//reconcile Autoscaler
-  r.Autoscaler.Reconcile()
-  return nil
+	r.Autoscaler.Reconcile()
+	return nil
 }

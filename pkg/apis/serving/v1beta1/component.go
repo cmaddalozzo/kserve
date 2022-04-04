@@ -27,6 +27,7 @@ import (
 	"github.com/kserve/kserve/pkg/utils"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
+	kedav1alpha1 "github.com/kedacore/keda/v2/apis/keda/v1alpha1"
 )
 
 // Known error messages
@@ -96,6 +97,7 @@ type ComponentExtensionSpec struct {
 	// Activate request batching and batching configurations
 	// +optional
 	Batcher *Batcher `json:"batcher,omitempty"`
+  ScaleTriggers []kedav1alpha1.ScaleTriggers `json:"scaleTriggers"`
 }
 
 // Default the ComponentExtensionSpec

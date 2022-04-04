@@ -3814,6 +3814,34 @@ spec:
                     type: string
                   runtimeClassName:
                     type: string
+                  scaleTriggers:
+                    items:
+                      properties:
+                        authenticationRef:
+                          properties:
+                            kind:
+                              type: string
+                            name:
+                              type: string
+                          required:
+                          - name
+                          type: object
+                        fallback:
+                          format: int32
+                          type: integer
+                        metadata:
+                          additionalProperties:
+                            type: string
+                          type: object
+                        name:
+                          type: string
+                        type:
+                          type: string
+                      required:
+                      - metadata
+                      - type
+                      type: object
+                    type: array
                   schedulerName:
                     type: string
                   securityContext:
@@ -4635,6 +4663,8 @@ spec:
                       - name
                       type: object
                     type: array
+                required:
+                - scaleTriggers
                 type: object
               predictor:
                 properties:
@@ -9059,6 +9089,34 @@ spec:
                     type: string
                   runtimeClassName:
                     type: string
+                  scaleTriggers:
+                    items:
+                      properties:
+                        authenticationRef:
+                          properties:
+                            kind:
+                              type: string
+                            name:
+                              type: string
+                          required:
+                          - name
+                          type: object
+                        fallback:
+                          format: int32
+                          type: integer
+                        metadata:
+                          additionalProperties:
+                            type: string
+                          type: object
+                        name:
+                          type: string
+                        type:
+                          type: string
+                      required:
+                      - metadata
+                      - type
+                      type: object
+                    type: array
                   schedulerName:
                     type: string
                   securityContext:
@@ -12136,6 +12194,8 @@ spec:
                       workingDir:
                         type: string
                     type: object
+                required:
+                - scaleTriggers
                 type: object
               transformer:
                 properties:
@@ -13165,6 +13225,34 @@ spec:
                     type: string
                   runtimeClassName:
                     type: string
+                  scaleTriggers:
+                    items:
+                      properties:
+                        authenticationRef:
+                          properties:
+                            kind:
+                              type: string
+                            name:
+                              type: string
+                          required:
+                          - name
+                          type: object
+                        fallback:
+                          format: int32
+                          type: integer
+                        metadata:
+                          additionalProperties:
+                            type: string
+                          type: object
+                        name:
+                          type: string
+                        type:
+                          type: string
+                      required:
+                      - metadata
+                      - type
+                      type: object
+                    type: array
                   schedulerName:
                     type: string
                   securityContext:
@@ -13986,6 +14074,8 @@ spec:
                       - name
                       type: object
                     type: array
+                required:
+                - scaleTriggers
                 type: object
             required:
             - predictor
