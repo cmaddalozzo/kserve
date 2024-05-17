@@ -26,6 +26,9 @@ from transformers import (
     AutoModelForTableQuestionAnswering,
     AutoModelForTokenClassification,
     PretrainedConfig,
+    Pipeline,
+    PreTrainedTokenizer,
+    pipeline,
 )
 
 
@@ -76,6 +79,14 @@ TASK_2_CLS = {
     MLTask.multiple_choice: AutoModelForMultipleChoice,
 }
 
+TASK_2_PIPELINE = {
+    MLTask.sequence_classification: "text-classification",
+    MLTask.question_answering: "question-answering",
+    MLTask.table_question_answering: "table-question-answering",
+    MLTask.token_classification: "token-classification",
+    MLTask.fill_mask: "fill-mask",
+}
+
 SUPPORTED_TASKS = {
     MLTask.sequence_classification,
     MLTask.token_classification,
@@ -112,6 +123,14 @@ def is_generative_task(task: MLTask) -> bool:
         MLTask.text_generation,
         MLTask.text2text_generation,
     }
+
+
+def get_pipeline_for_task(
+    task: MLTask, model, tokenizer: PreTrainedTokenizer
+) -> Pipeline:
+    if task not in TASK_2_PIPELINE:
+        raise ValueError(f"Pipeline not found for task '{task.name}'")
+    return pipeline(TASK_2_PIPELINE[task], model=model, tokenizer=tokenizer)
 
 
 def get_model_class_for_task(task: MLTask) -> Type[AutoModel]:
