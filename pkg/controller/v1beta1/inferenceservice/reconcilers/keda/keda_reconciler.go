@@ -163,10 +163,14 @@ func getKedaMetrics(componentMeta metav1.ObjectMeta, componentExt *v1beta1.Compo
 
 				if triggerType == string(constants.AutoScalerMetricsSourceOpenTelemetry) {
 					trigger.Type = "external"
+					aggregationFunction := metric.PodMetric.Metric.AggregationFunction
+					if aggregationFunction == "" {
+						aggregationFunction = "sum" // default to sum if not specified
+					}
 					// Inject namespace and deployment label selectors into the query for metric isolation.
 					// This ensures the metricQuery only selects metrics for the correct deployment and namespace.
 					// Example: sum(<query>{namespace="<namespace>", deployment="<deployment>"})
-					metricQuery := fmt.Sprintf("sum(%s{namespace=\"%s\", deployment=\"%s\"})", query, componentMeta.Namespace, componentMeta.Name)
+					metricQuery := fmt.Sprintf("%s(%s{namespace=\"%s\", deployment=\"%s\"})", aggregationFunction, query, componentMeta.Namespace, componentMeta.Name)
 					trigger.Metadata = map[string]string{
 						"metricQuery":   metricQuery,
 						"targetValue":   targetValue,

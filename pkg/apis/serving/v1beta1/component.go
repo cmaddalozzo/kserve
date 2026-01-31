@@ -308,6 +308,10 @@ type PodMetrics struct {
 	// Query specifies the query to run to get metrics from the PodsMetricsBackend.
 	// +optional
 	Query string `json:"query,omitempty"`
+	// AggregationFunction specifies the operation to aggregate the metrics across pods.
+	// Possible values are sum, avg, min, max, count. Default is 'sum'.
+	// +optional
+	AggregationFunction string `json:"aggregationFunction,omitempty"`
 	// OperationOverTime specifies the operation to aggregate the metrics over time.
 	// Possible values are last_one, avg, max, min, rate, count. Default is 'last_one'.
 	// +optional
