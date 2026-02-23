@@ -47,6 +47,7 @@ class V1beta1PodMetrics(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'aggregation_function': 'str',
         'backend': 'str',
         'metric_names': 'list[str]',
         'operation_over_time': 'str',
@@ -55,6 +56,7 @@ class V1beta1PodMetrics(object):
     }
 
     attribute_map = {
+        'aggregation_function': 'aggregationFunction',
         'backend': 'backend',
         'metric_names': 'metricNames',
         'operation_over_time': 'operationOverTime',
@@ -62,12 +64,13 @@ class V1beta1PodMetrics(object):
         'server_address': 'serverAddress'
     }
 
-    def __init__(self, backend='', metric_names=None, operation_over_time=None, query=None, server_address=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, aggregation_function=None, backend='', metric_names=None, operation_over_time=None, query=None, server_address=None, local_vars_configuration=None):  # noqa: E501
         """V1beta1PodMetrics - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._aggregation_function = None
         self._backend = None
         self._metric_names = None
         self._operation_over_time = None
@@ -75,6 +78,8 @@ class V1beta1PodMetrics(object):
         self._server_address = None
         self.discriminator = None
 
+        if aggregation_function is not None:
+            self.aggregation_function = aggregation_function
         if backend is not None:
             self.backend = backend
         if metric_names is not None:
@@ -85,6 +90,29 @@ class V1beta1PodMetrics(object):
             self.query = query
         if server_address is not None:
             self.server_address = server_address
+
+    @property
+    def aggregation_function(self):
+        """Gets the aggregation_function of this V1beta1PodMetrics.  # noqa: E501
+
+        AggregationFunction specifies the operation to aggregate the metrics across pods. Possible values are sum, avg, min, max, count. Default is 'sum'.  # noqa: E501
+
+        :return: The aggregation_function of this V1beta1PodMetrics.  # noqa: E501
+        :rtype: str
+        """
+        return self._aggregation_function
+
+    @aggregation_function.setter
+    def aggregation_function(self, aggregation_function):
+        """Sets the aggregation_function of this V1beta1PodMetrics.
+
+        AggregationFunction specifies the operation to aggregate the metrics across pods. Possible values are sum, avg, min, max, count. Default is 'sum'.  # noqa: E501
+
+        :param aggregation_function: The aggregation_function of this V1beta1PodMetrics.  # noqa: E501
+        :type: str
+        """
+
+        self._aggregation_function = aggregation_function
 
     @property
     def backend(self):

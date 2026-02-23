@@ -4781,6 +4781,10 @@
     "v1beta1.PodMetrics": {
       "type": "object",
       "properties": {
+        "aggregationFunction": {
+          "description": "AggregationFunction specifies the operation to aggregate the metrics across pods. Possible values are sum, avg, min, max, count. Default is 'sum'.",
+          "type": "string"
+        },
         "backend": {
           "description": "Backend defines the scaling metric type watched by the autoscaler. Possible value: opentelemetry.",
           "type": "string",

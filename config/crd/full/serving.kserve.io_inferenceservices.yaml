@@ -1365,6 +1365,8 @@ spec:
                                 properties:
                                   metric:
                                     properties:
+                                      aggregationFunction:
+                                        type: string
                                       backend:
                                         enum:
                                           - opentelemetry
@@ -4721,6 +4723,8 @@ spec:
                                 properties:
                                   metric:
                                     properties:
+                                      aggregationFunction:
+                                        type: string
                                       backend:
                                         enum:
                                           - opentelemetry
@@ -19859,6 +19863,8 @@ spec:
                                 properties:
                                   metric:
                                     properties:
+                                      aggregationFunction:
+                                        type: string
                                       backend:
                                         enum:
                                           - opentelemetry

@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**aggregation_function** | **str** | AggregationFunction specifies the operation to aggregate the metrics across pods. Possible values are sum, avg, min, max, count. Default is &#39;sum&#39;. | [optional] 
 **backend** | **str** | Backend defines the scaling metric type watched by the autoscaler. Possible value: opentelemetry. | [optional] [default to '']
 **metric_names** | **list[str]** | MetricNames is the list of metric names in the backend. | [optional] 
 **operation_over_time** | **str** | OperationOverTime specifies the operation to aggregate the metrics over time. Possible values are last_one, avg, max, min, rate, count. Default is &#39;last_one&#39;. | [optional] 
